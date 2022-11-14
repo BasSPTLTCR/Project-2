@@ -17,7 +17,7 @@ var fontSize = 10,
 // Setting up the drops
 var drops = [];
 for (var i = 0; i < columns; i++) {
-  drops[i] = 1;
+  drops[i] = 10000;
 }
 
 // Setting up the draw function
@@ -29,7 +29,7 @@ function draw() {
     ctx.fillStyle = '#0f0';
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
     drops[i]++;
-    if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
       drops[i] = 0;
     }
   }
@@ -40,7 +40,6 @@ setInterval(draw, 35);
 
 var c = document.querySelector("Canvas");
       var ctx = c.getContext("2d");
-      var grd = ctx.createLinearGradient(0, 0, 600, 600);
 
       grd.addColorStop(0, "#FF0000");
       grd.addColorStop(1, "#00FF00");
