@@ -37,12 +37,3 @@ function draw() {
 
 // Loop the animation
 setInterval(draw, 35);
-
-var c = document.querySelector("Canvas");
-      var ctx = c.getContext("2d");
-
-      grd.addColorStop(0, "#FF0000");
-      grd.addColorStop(1, "#00FF00");
-
-      ctx.fillStyle = grd;
-      ctx.fillRect(0, 0, 600, 600);
