@@ -57,9 +57,9 @@ a {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffffff;
+    background-color: blue;
     min-width: 8vw;
-    margin-bottom: 2rem;
+    padding-bottom: 1rem;
     box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
