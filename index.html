@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P2-Gamewebsite</title>
+    <title>P2-Gamewebsite ┃ Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="./icons/controller_icon.svg">
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Onze Games</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="test">
                         <a href="./games/game_student1.html">Game student1</a>
                         <a href="./games/game_student2.html">Game student2</a>
                         <a href="./games/game_student3.html">Game student3</a>
@@ -54,12 +55,14 @@
     </header>
 
     <main>
-        <div class="hacker">
-            <canvas class="canvas hacker"></canvas>
-        </div>
-        <section>
-            <h2>Website titel</h2>
-            <h3>Intro website</h3>
+        <section class="home_section">
+            <video class="background_video" autoplay muted loop>
+                <source src="./videos/cinematic_video_loop.mp4" type="video/mp4">
+            </video>
+            <div class="home_title">
+                <h2>Website titel</h2>
+                <h3>Intro website</h3>
+            </div>
         </section>
     </main>
 
