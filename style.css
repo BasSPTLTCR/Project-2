@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body:not(div:first-of-type) {
     font-family: 'Roboto Mono', monospace;
     z-index: 1;
@@ -119,6 +123,7 @@ main:not(:first-child) {
     min-width: 100%;
     min-height: 100%;
     z-index: -2;
+    
 }
 
 .home_title{
@@ -128,6 +133,13 @@ main:not(:first-child) {
     color: white;
     margin-top: 20%;
     font-size: xx-large;
+}
+
+.home_title a{
+    color: black;
+    z-index: 2;
+    background-color: white;
+    border-radius: 20px;
 }
 
 .home_section{
