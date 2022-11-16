@@ -65,30 +65,35 @@ nav h1{
 }
 
 .dropdown-content {
-    margin-top: -10%;
     display: none;
     position: absolute;
+    margin-top: -10%;
     min-width: 8vw;
-    padding-bottom: 1rem;
     box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
     z-index: 1;
+    transition: margin-top 5s;
+    transition-timing-function: ease-in;
 }
 
 .dropdown-content a {
     color: #000000;
-    padding: 0.8rem 1rem;
+    padding: 0.3rem 1rem;
     display: block;
     text-align: left;
+    border-radius: 10px;
 }
 
 .dropbtn{
     border-radius: 10px;
+    z-index: 2;
 }
 
 .dropdown:hover .dropdown-content {
-    margin-top: 5%;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    z-index: 1;
+    border-radius: 10px;
 }
 
 /* body */
@@ -131,8 +136,15 @@ main:not(:first-child) {
     padding-top: 2rem;
 }
 
+.index-header{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    width: 100vw;
+}
+
 .index-cards{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -140,52 +152,16 @@ main:not(:first-child) {
     justify-content: space-evenly;
 }
 
-.index-card1 {
-    height: 70vh;
-    width: 20vw;
+.cards {
+    height: 50vh;
+    width: 22vw;
     background-color: #000;
     border: gray;
     border-style: inset;
+    border-radius: 15px;
     text-align: center;
 }
 
-.index-card1 img {
-    height: 30vh;
-}
-
-/* .bg1{
-    height: 50%;
-    background-repeat: no-repeat;
-    background-image: url(./img/csgo1.jpg);
-    background-position: center, center;
-} */
-
-
-
-.index-card2 {
-    height: 70vh;
-    width: 20vw;
-    background-color: #000;
-    border: gray;
-    border-style: inset;
-    text-align: center;
-}
-
-.index-card3 {
-    height: 70vh;
-    width: 20vw;
-    background-color: #000;
-    border: gray;
-    border-style: inset;
-    text-align: center;
-}
-
-.index-header{
-    display: flex;
-    justify-content: center;
-    font-size: 4.5rem;
-    width: 100vw;
-}
 
 /* footer */
 
@@ -193,7 +169,6 @@ footer {
     border-top: 5px solid white;
     background-color: black;
     height: 3rem;
-    margin-top: 120rem;
     display: flex;
     justify-content: center;
     align-items: center;
