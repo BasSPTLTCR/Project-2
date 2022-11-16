@@ -136,8 +136,15 @@ main:not(:first-child) {
     padding-top: 2rem;
 }
 
+.index-header{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    width: 100vw;
+}
+
 .index-cards{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -145,39 +152,16 @@ main:not(:first-child) {
     justify-content: space-evenly;
 }
 
-.index-card1 {
-    height: 40vh;
-    width: 20vw;
+.cards {
+    height: 50vh;
+    width: 22vw;
     background-color: #000;
     border: gray;
     border-style: inset;
+    border-radius: 15px;
     text-align: center;
 }
 
-.index-card2 {
-    height: 40vh;
-    width: 20vw;
-    background-color: #000;
-    border: gray;
-    border-style: inset;
-    text-align: center;
-}
-
-.index-card3 {
-    height: 40vh;
-    width: 20vw;
-    background-color: #000;
-    border: gray;
-    border-style: inset;
-    text-align: center;
-}
-
-.index-header{
-    display: flex;
-    justify-content: center;
-    font-size: 4.5rem;
-    width: 100vw;
-}
 
 /* footer */
 
@@ -185,7 +169,6 @@ footer {
     border-top: 5px solid white;
     background-color: black;
     height: 3rem;
-    margin-top: 120rem;
     display: flex;
     justify-content: center;
     align-items: center;
