@@ -141,7 +141,7 @@ main:not(:first-child) {
 }
 
 .index-card1 {
-    height: 40vh;
+    height: 70vh;
     width: 20vw;
     background-color: #000;
     border: gray;
@@ -149,8 +149,21 @@ main:not(:first-child) {
     text-align: center;
 }
 
+.index-card1 img {
+    height: 30vh;
+}
+
+/* .bg1{
+    height: 50%;
+    background-repeat: no-repeat;
+    background-image: url(./img/csgo1.jpg);
+    background-position: center, center;
+} */
+
+
+
 .index-card2 {
-    height: 40vh;
+    height: 70vh;
     width: 20vw;
     background-color: #000;
     border: gray;
@@ -159,7 +172,7 @@ main:not(:first-child) {
 }
 
 .index-card3 {
-    height: 40vh;
+    height: 70vh;
     width: 20vw;
     background-color: #000;
     border: gray;
