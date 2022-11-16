@@ -15,7 +15,6 @@ body:not(header) {
 }
 
 div:first-of-type {
-    position:absolute;
     z-index: -1;
 }
 
@@ -110,7 +109,7 @@ main:not(:first-child) {
 }
 
 .background_video{
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     min-width: 100%;
@@ -119,12 +118,17 @@ main:not(:first-child) {
 }
 
 .home_title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: white;
-    margin-top: 55%;
+    margin-top: 30%;
     font-size: xx-large;
 }
 
 .home_section{
+    display: flex;
+    justify-content: center;
     padding-top: 2rem;
 }
 
