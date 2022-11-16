@@ -28,6 +28,14 @@ div:first-of-type {
     height: 100vh;
 }
 
+.logo {
+    text-decoration: none;
+    text-align: center;
+    width: 5vw;
+    margin-left: 3rem;
+    color: white;
+}
+
 .main-head nav {
     display: flex;
     color: white;
@@ -53,7 +61,7 @@ li {
     display: block;
 }
 
-a {
+.dropdown a {
     font-weight: bolder;
     display: flex;
     align-items: center;
@@ -64,7 +72,7 @@ a {
     padding: 1rem;
 }
 
-a:hover {
+.dropdown a:hover {
     background-color: grey;
 }
 
@@ -201,16 +209,31 @@ body:not(div:first-of-type) {
 
 .sect-cards {
     display: flex;
-    justify-content: ;
 }
 
 .sect-cards div {
     display: flex;
-    justify-content: center;
-    border: 5px solid white ;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    border: 5px solid rgb(4, 84, 14) ;
     height: 60vh;
     width: 25vw;
     margin: 0rem 3rem;
+}
+
+.sect-cards div h2 {
+    margin-top: 1rem;
+}
+
+.bcard p {
+    padding: 1rem 3rem;
+}
+
+.bcard img {
+    margin-top: 2rem;
+    height: 300px;
+    width: auto;
 }
 
 
