@@ -11,7 +11,7 @@ html{
 body:not(div:first-of-type) {
     font-family: 'Roboto Mono', monospace;
     z-index: 1;
-    background-color: #000
+    background-color: rgba(0, 0, 0, 0.058)
 }
 
 body:not(header) {
@@ -200,11 +200,10 @@ body:not(div:first-of-type) {
 .main-fav {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding-top: 3rem;
     min-height: 93.98vh;
-    max-height: 100vh;
 }
 
 .sect-cards {
@@ -222,6 +221,12 @@ body:not(div:first-of-type) {
     margin: 0rem 3rem;
 }
 
+.bcard img {
+    margin-top: 2rem;
+    height: 300px;
+    width: auto;
+}
+
 .sect-cards div h2 {
     margin-top: 1rem;
 }
@@ -230,20 +235,14 @@ body:not(div:first-of-type) {
     padding: 1rem 3rem;
 }
 
-.bcard img {
-    margin-top: 2rem;
-    height: 300px;
-    width: auto;
-}
-
 
 /* footer */
 
 footer {
-    border-top: 5px solid white;
-    background-color: black;
-    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 5px solid white;
+    background-color: black;
+    height: 3rem;
 }
