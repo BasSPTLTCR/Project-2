@@ -132,6 +132,40 @@ main:not(:first-child) {
     padding-top: 2rem;
 }
 
+.index-cards{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.index-card1 {
+    height: 40vh;
+    width: 20vw;
+    background-color: #000;
+    border: gray;
+    border-style: inset;
+    text-align: center;
+}
+
+.index-card2 {
+    height: 40vh;
+    width: 20vw;
+    background-color: #000;
+    border: gray;
+    border-style: inset;
+    text-align: center;
+}
+
+.index-card3 {
+    height: 40vh;
+    width: 20vw;
+    background-color: #000;
+    border: gray;
+    border-style: inset;
+    text-align: center;
+}
+
 /* footer */
 
 footer {
