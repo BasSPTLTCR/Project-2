@@ -67,8 +67,9 @@ nav h1{
     margin-top: -10%;
     display: none;
     position: absolute;
-    background-color: #ffffff;
+    background-color: blue;
     min-width: 8vw;
+    padding-bottom: 1rem;
     box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
     z-index: 1;
     transition: margin-top 5s;
@@ -92,6 +93,18 @@ nav h1{
     flex-direction: column;
 }
 
+/* body */
+
+body:not(header) {
+    color: white;
+}
+
+body:not(div:first-of-type) {
+    font-family: 'Roboto Mono', monospace;
+    z-index: 1;
+    background-color: #000
+}
+
 main:not(:first-child) {
     z-index: 2;
 }
@@ -112,6 +125,15 @@ main:not(:first-child) {
 }
 
 .home_section{
+    padding-top: 2rem;
+}
+
+/* footer */
+
+footer {
+    background-color: green;
+    height: 3rem;
+    margin-top: 120rem;
     display: flex;
     justify-content: center;
     align-items: center;
