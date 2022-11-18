@@ -240,7 +240,7 @@ body:not(div:first-of-type) {
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border-top: 5px solid white;
     background-color: black;
