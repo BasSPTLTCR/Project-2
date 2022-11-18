@@ -31,7 +31,7 @@ div:first-of-type {
 .logo {
     text-decoration: none;
     text-align: center;
-    width: 5vw;
+    width: 10vw;
     margin-left: 3rem;
     color: white;
 }
@@ -223,7 +223,7 @@ body:not(div:first-of-type) {
 
 .bcard img {
     margin-top: 2rem;
-    height: 300px;
+    height: 150px;
     width: auto;
 }
 
@@ -234,7 +234,6 @@ body:not(div:first-of-type) {
 .bcard p {
     padding: 1rem 3rem;
 }
-
 
 /* footer */
 
