@@ -244,6 +244,33 @@ body:not(div:first-of-type) {
     padding: 1rem 3rem;
 }
 
+/* portfolio */
+
+.port-sect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 94vh;
+    margin: 0rem 10rem;
+}
+
+.port-sect div:first-child {
+    margin-left: 16rem;
+}
+
+.port-info {
+    display: flex;
+}
+
+.port-info p {
+    width: 45vw;
+    margin-top: 4rem;
+}
+
+.port-info img {
+    margin-left: 4rem;
+}
+
 /* footer */
 
 footer {
