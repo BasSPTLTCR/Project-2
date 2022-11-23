@@ -245,6 +245,10 @@ body:not(div:first-of-type) {
     margin: 0rem 10rem;
 }
 
+.port-sect div:first-child {
+    margin-left: 16rem;
+}
+
 .port-info {
     display: flex;
 }
