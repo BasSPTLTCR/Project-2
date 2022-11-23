@@ -70,6 +70,7 @@ li {
     background-color: white;
     height: 4vh;
     padding: 1rem;
+    transition: background-color 0.3s;
 }
 
 .dropdown a:hover {
@@ -80,22 +81,14 @@ nav h1 {
     margin-left: 3%;
 }
 
-.dropdown-content {
+.dropdown-content{
     display: none;
     position: absolute;
-    margin-top: -10%;
     min-width: 8vw;
     box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
     z-index: 1;
-    transition: margin-top 5s;
-    transition-timing-function: ease-in;
-}
-
-.dropdown-content a {
-    color: #000000;
-    padding: 0.3rem 1rem;
-    display: block;
-    text-align: left;
+    color: aliceblue;
+    transition: color 5s;
 }
 
 .borderb {
@@ -116,9 +109,12 @@ nav h1 {
 .dropdown:hover .dropdown-content {
     display: flex;
     flex-direction: column;
-    margin: 0;
     z-index: 1;
     border-radius: 10px;
+}
+
+.dropdown-content:focus-visible{
+    color: blue;
 }
 
 /* body */
@@ -219,6 +215,19 @@ body:not(div:first-of-type) {
     height: 60vh;
     width: 25vw;
     margin: 0rem 3rem;
+}
+
+/**/
+.sect-cards-color-1 div {
+    border: 5px solid rgb(4, 84, 14) ;
+}
+
+.sect-cards-color-2 div{
+    border: 5px solid rgb(255, 0, 0) ;
+}
+
+.sect-cards-color-3 div{
+    border: 5px solid rgb(153, 0, 255) ;
 }
 
 .bcard img {
