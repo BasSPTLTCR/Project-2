@@ -268,11 +268,17 @@ body:not(div:first-of-type) {
 
 .port-info p {
     width: 45vw;
+    height: 35vh;
     margin-top: 4rem;
 }
 
 .port-info img {
     margin-left: 4rem;
+}
+
+.social_buttons{
+    position: fixed;
+    padding-top: 30vh;
 }
 
 /* footer */
