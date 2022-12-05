@@ -44,6 +44,7 @@ div:first-of-type {
     background-color: black;
     border-bottom: 5px solid white;
     position: fixed;
+    z-index: 3;
 }
 
 ul {
