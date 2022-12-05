@@ -241,7 +241,7 @@ body:not(div:first-of-type) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 94vh;
+    height: 70vh;
     margin: 0rem 10rem;
 }
 
@@ -260,6 +260,29 @@ body:not(div:first-of-type) {
 
 .port-info img {
     margin-left: 4rem;
+}
+
+.ranking {
+    height: 24vh;
+    margin-left: 10rem;
+}
+
+.html-rank-bas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30vw;
+}
+
+.box {
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.1rm;
+}
+
+.green {
+    background-color: green;
 }
 
 /* footer */
