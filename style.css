@@ -280,7 +280,7 @@ body:not(div:first-of-type) {
 }
 
 .social_buttons {
-    position: fixed;
+    position: absolute;
     padding-top: 40vh;
 }
 
@@ -372,34 +372,34 @@ body:not(div:first-of-type) {
     margin-top: 0.5rem;
 }
 
-.html-rank-bas h2 {
+.html-rank-bas h2, .html-rank-roberto h2{
     margin-right: 7.2rem;
 }
 
-.html-rank-bas div {
+.html-rank-bas div, .html-rank-roberto div{
     display: flex;
     margin-left: 0.5rem;
 }
 
-.css-rank-bas h2 {
+.css-rank-bas h2, .css-rank-roberto h2{
     margin-right: 8.4rem;
 }
 
-.css-rank-bas div {
+.css-rank-bas div, .css-rank-roberto div{
     display: flex;
     margin-left: 0.5rem;
 }
 
-.js-rank-bas div {
+.js-rank-bas div, .js-rank-roberto div{
     display: flex;
     margin-left: 0.5rem;
 }
 
-.php-rank-bas h2 {
+.php-rank-bas h2, .php-rank-roberto h2{
     margin-right: 8.5rem;
 }
 
-.php-rank-bas div {
+.php-rank-bas div, .php-rank-roberto div{
     display: flex;
     margin-left: 0.5rem;
 }
