@@ -261,7 +261,15 @@ body:not(div:first-of-type) {
     margin: 0rem 10rem;
 }
 
-.port-sect div:first-child {
+.port-sect-bas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 64vh;
+    margin: 0rem 10rem;
+}
+
+.port-sect div:first-child, .port-sect-bas div:first-child {
     margin-left: 16rem;
 }
 
@@ -311,6 +319,10 @@ body:not(div:first-of-type) {
 
 .green {
     background-color: green;
+}
+
+.fifty {
+    background: linear-gradient(to right, green 50%, white 50%);
 }
 
 .html-rank {
