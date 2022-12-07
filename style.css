@@ -280,65 +280,25 @@ body:not(div:first-of-type) {
 }
 
 .social_buttons {
-    position: absolute;
+    position: fixed;
     padding-top: 40vh;
 }
 
 .linked_in{
-    position: fixed;
+    position: absolute;
     padding-left: 40vh;
     padding-top: 10vh;
 }
 
 .social_title{
-    position: fixed;
-    padding-top: 25vh;
-}
-
-/* Uitleg over de games */
-
-.uitleg_game_section{
-    margin-top: 10%;
-    margin-left: 5%;
-    width: 100vw;
-    height: 75vh;
-}
-
-.uitleg_game_main{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-.uitleg_game_main img{
-    margin-top: 12%;
-    margin-right: 5%;
-    margin-left: 10%;
-}
-
-/* Canvas voor de game*/
-
-.game_main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 95vh;
-}
-
-.game_main canvas{
-    z-index: 3;
-}
-
-#canvas_student2{
-    width: 60%;
-    height: 70%;
-    border: white 5px solid;
+    position: absolute;
+    padding-top: 13vh;
 }
 
 /* hier begint de rating van hoe goed iemand is in de programmeer talen */
 
 .ranking {
-    height: 24vh;
+    height: 30vh;
     margin-left: 10rem;
 }
 
@@ -403,6 +363,48 @@ body:not(div:first-of-type) {
     display: flex;
     margin-left: 0.5rem;
 }
+
+/* Uitleg over de games */
+
+.uitleg_game_section{
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 100vw;
+    height: 75vh;
+}
+
+.uitleg_game_main{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.uitleg_game_main img{
+    margin-top: 12%;
+    margin-right: 5%;
+    margin-left: 10%;
+}
+
+
+/* Canvas voor de game*/
+
+.game_main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+
+.game_main canvas{
+    z-index: 3;
+}
+
+#canvas_student2{
+    width: 60%;
+    height: 70%;
+    border: white 5px solid;
+}
+
 
 /* footer */
 
