@@ -278,7 +278,58 @@ body:not(div:first-of-type) {
 
 .social_buttons{
     position: fixed;
-    padding-top: 30vh;
+    padding-top: 50vh;
+}
+
+.linked_in{
+    position: fixed;
+    padding-left: 40vh;
+    padding-top: 10vh;
+}
+
+.social_title{
+    position: fixed;
+    padding-top: 35vh;
+}
+
+/* Uitleg over de games */
+
+.uitleg_game_section{
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 100vw;
+    height: 75vh;
+}
+
+.uitleg_game_main{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.uitleg_game_main img{
+    margin-top: 12%;
+    margin-right: 5%;
+    margin-left: 10%;
+}
+
+/* Canvas voor de game*/
+
+.game_main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+
+.game_main canvas{
+    z-index: 3;
+}
+
+#canvas_student2{
+    width: 60%;
+    height: 70%;
+    border: white 5px solid;
 }
 
 /* footer */
