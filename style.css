@@ -218,7 +218,7 @@ body:not(div:first-of-type) {
     align-items: center;
     background-color: black;
     border: 5px solid rgb(4, 84, 14);
-    height: 60vh;
+    height: 75vh;
     width: 25vw;
     margin: 0rem 3rem;
 }
@@ -257,7 +257,7 @@ body:not(div:first-of-type) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
+    height: 95vh;
     margin: 0rem 10rem;
 }
 
@@ -281,7 +281,7 @@ body:not(div:first-of-type) {
 
 .social_buttons {
     position: fixed;
-    padding-top: 50vh;
+    padding-top: 40vh;
 }
 
 .linked_in{
@@ -292,7 +292,7 @@ body:not(div:first-of-type) {
 
 .social_title{
     position: fixed;
-    padding-top: 35vh;
+    padding-top: 25vh;
 }
 
 /* Uitleg over de games */
