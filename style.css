@@ -262,16 +262,11 @@ body:not(div:first-of-type) {
     margin-left: 4rem;
 }
 
+/* hier begint de rating van hoe goed iemand is in de programmeer talen */
+
 .ranking {
     height: 24vh;
     margin-left: 10rem;
-}
-
-.html-rank-bas {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 30vw;
 }
 
 .box {
@@ -283,6 +278,57 @@ body:not(div:first-of-type) {
 
 .green {
     background-color: green;
+}
+
+.html-rank {
+    display: flex;
+}
+
+.css-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.js-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.php-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.html-rank-bas h2 {
+    margin-right: 5.4rem;
+}
+
+.html-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.css-rank-bas h2 {
+    margin-right: 6.3rem;
+}
+
+.css-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.js-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.php-rank-bas h2 {
+    margin-right: 6.3rem;
+}
+
+.php-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
 }
 
 /* footer */
