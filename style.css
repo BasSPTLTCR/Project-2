@@ -280,7 +280,7 @@ body:not(div:first-of-type) {
 }
 
 .social_buttons {
-    position: fixed;
+    position: absolute;
     padding-top: 40vh;
 }
 
