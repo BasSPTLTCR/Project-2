@@ -255,7 +255,7 @@ body:not(div:first-of-type) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 94vh;
+    height: 70vh;
     margin: 0rem 10rem;
 }
 
@@ -277,9 +277,78 @@ body:not(div:first-of-type) {
     margin-left: 4rem;
 }
 
-.social_buttons{
+.social_buttons {
     position: fixed;
     padding-top: 30vh;
+}
+
+/* hier begint de rating van hoe goed iemand is in de programmeer talen */
+
+.ranking {
+    height: 24vh;
+    margin-left: 10rem;
+}
+
+.box {
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.1rm;
+}
+
+.green {
+    background-color: green;
+}
+
+.html-rank {
+    display: flex;
+}
+
+.css-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.js-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.php-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.html-rank-bas h2 {
+    margin-right: 5.4rem;
+}
+
+.html-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.css-rank-bas h2 {
+    margin-right: 6.3rem;
+}
+
+.css-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.js-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.php-rank-bas h2 {
+    margin-right: 6.3rem;
+}
+
+.php-rank-bas div {
+    display: flex;
+    margin-left: 0.5rem;
 }
 
 /* footer */
