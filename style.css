@@ -257,7 +257,7 @@ body:not(div:first-of-type) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 95vh;
+    height: 64vh;
     margin: 0rem 10rem;
 }
 
@@ -344,34 +344,34 @@ body:not(div:first-of-type) {
     margin-top: 0.5rem;
 }
 
-.html-rank-bas h2, .html-rank-roberto h2{
+.html-rank-bas h2, .html-rank-roberto h2, .html-rank-bastiaan h2{
     margin-right: 7.2rem;
 }
 
-.html-rank-bas div, .html-rank-roberto div{
+.html-rank-bas div, .html-rank-roberto div, .html-rank-bastiaan div{
     display: flex;
     margin-left: 0.5rem;
 }
 
-.css-rank-bas h2, .css-rank-roberto h2{
+.css-rank-bas h2, .css-rank-roberto h2, .css-rank-bastiaan h2{
     margin-right: 8.4rem;
 }
 
-.css-rank-bas div, .css-rank-roberto div{
+.css-rank-bas div, .css-rank-roberto div, .css-rank-bastiaan div{
     display: flex;
     margin-left: 0.5rem;
 }
 
-.js-rank-bas div, .js-rank-roberto div{
+.js-rank-bas div, .js-rank-roberto div, .js-rank-bastiaan div{
     display: flex;
     margin-left: 0.5rem;
 }
 
-.php-rank-bas h2, .php-rank-roberto h2{
+.php-rank-bas h2, .php-rank-roberto h2, .php-rank-bastiaan h2{
     margin-right: 8.5rem;
 }
 
-.php-rank-bas div, .php-rank-roberto div{
+.php-rank-bas div, .php-rank-roberto div, .php-rank-bastiaan div{
     display: flex;
     margin-left: 0.5rem;
 }
