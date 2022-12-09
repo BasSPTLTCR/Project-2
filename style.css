@@ -404,7 +404,8 @@ body:not(div:first-of-type) {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95vh;
+    flex-direction: column;
+    height: 94vh;
 }
 
 .game_main canvas{
@@ -412,6 +413,12 @@ body:not(div:first-of-type) {
 }
 
 #canvas_student2{
+    width: 60%;
+    height: 70%;
+    border: white 5px solid;
+}
+
+#canvas_student3 {
     width: 60%;
     height: 70%;
     border: white 5px solid;
