@@ -261,7 +261,15 @@ body:not(div:first-of-type) {
     margin: 0rem 10rem;
 }
 
-.port-sect div:first-child {
+.port-sect-bas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 64vh;
+    margin: 0rem 10rem;
+}
+
+.port-sect div:first-child, .port-sect-bas div:first-child {
     margin-left: 16rem;
 }
 
@@ -280,19 +288,92 @@ body:not(div:first-of-type) {
 }
 
 .social_buttons {
-    position: fixed;
+    position: absolute;
     padding-top: 40vh;
 }
 
 .linked_in{
-    position: fixed;
+    position: absolute;
     padding-left: 40vh;
     padding-top: 10vh;
 }
 
 .social_title{
-    position: fixed;
-    padding-top: 25vh;
+    position: absolute;
+    padding-top: 13vh;
+}
+
+/* hier begint de rating van hoe goed iemand is in de programmeer talen */
+
+.ranking {
+    height: 30vh;
+    margin-left: 10rem;
+}
+
+.box {
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.1rm;
+}
+
+.green {
+    background-color: green;
+}
+
+.fifty {
+    background: linear-gradient(to right, green 50%, white 50%);
+}
+
+.html-rank {
+    display: flex;
+}
+
+.css-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.js-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.php-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.html-rank-bas h2, .html-rank-roberto h2{
+    margin-right: 7.2rem;
+}
+
+.html-rank-bas div, .html-rank-roberto div{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.css-rank-bas h2, .css-rank-roberto h2{
+    margin-right: 8.4rem;
+}
+
+.css-rank-bas div, .css-rank-roberto div{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.js-rank-bas div, .js-rank-roberto div{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.php-rank-bas h2, .php-rank-roberto h2{
+    margin-right: 8.5rem;
+}
+
+.php-rank-bas div, .php-rank-roberto div{
+    display: flex;
+    margin-left: 0.5rem;
 }
 
 /* Uitleg over de games */
@@ -316,13 +397,15 @@ body:not(div:first-of-type) {
     margin-left: 10%;
 }
 
+
 /* Canvas voor de game*/
 
 .game_main{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95vh;
+    flex-direction: column;
+    height: 94vh;
 }
 
 .game_main canvas{
@@ -335,74 +418,12 @@ body:not(div:first-of-type) {
     border: white 5px solid;
 }
 
-/* hier begint de rating van hoe goed iemand is in de programmeer talen */
-
-.ranking {
-    height: 24vh;
-    margin-left: 10rem;
+#canvas_student3 {
+    width: 60%;
+    height: 70%;
+    border: white 5px solid;
 }
 
-.box {
-    background-color: white;
-    height: 2rem;
-    width: 2rem;
-    margin: 0.1rm;
-}
-
-.green {
-    background-color: green;
-}
-
-.html-rank {
-    display: flex;
-}
-
-.css-rank {
-    display: flex;
-    margin-top: 0.5rem;
-}
-
-.js-rank {
-    display: flex;
-    margin-top: 0.5rem;
-}
-
-.php-rank {
-    display: flex;
-    margin-top: 0.5rem;
-}
-
-.html-rank-bas h2 {
-    margin-right: 5.4rem;
-}
-
-.html-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
-
-.css-rank-bas h2 {
-    margin-right: 6.3rem;
-}
-
-.css-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
-
-.js-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
-
-.php-rank-bas h2 {
-    margin-right: 6.3rem;
-}
-
-.php-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
 
 /* footer */
 
