@@ -408,6 +408,10 @@ body:not(div:first-of-type) {
     height: 94vh;
 }
 
+.game_main h1{
+    font-size: 50px;
+}
+
 .game_main canvas{
     z-index: 3;
 }
