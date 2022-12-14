@@ -481,6 +481,44 @@ button{
     border: white 5px solid;
 }
 
+/* Bastiaan game CSS */
+
+#display_b{
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url(./game_files/bastiaan/textures/skyboxb.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 75%;
+    border: white 3.5px solid;
+}
+
+#button_b {
+    all: unset;
+   cursor: pointer;
+   border: white 2.5px solid ;
+    border-radius: 25px;
+   width: 10vw;
+   height: 5vh;
+    text-align: center;
+    
+}
+
+#gamestarter {
+    display: none;
+    all: unset;
+    cursor: pointer;
+    border: white 2.5px solid ;
+    border-radius: 25px;
+    width: 10vw;
+    height: 5vh;
+    text-align: center;
+}
+
 
 /* footer */
 
