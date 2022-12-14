@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -216,7 +218,7 @@ body:not(div:first-of-type) {
     align-items: center;
     background-color: black;
     border: 5px solid rgb(4, 84, 14);
-    height: 60vh;
+    height: 75vh;
     width: 25vw;
     margin: 0rem 3rem;
 }
@@ -255,11 +257,19 @@ body:not(div:first-of-type) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
+    height: 64vh;
     margin: 0rem 10rem;
 }
 
-.port-sect div:first-child {
+.port-sect-bas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 64vh;
+    margin: 0rem 10rem;
+}
+
+.port-sect div:first-child, .port-sect-bas div:first-child {
     margin-left: 16rem;
 }
 
@@ -278,19 +288,92 @@ body:not(div:first-of-type) {
 }
 
 .social_buttons {
-    position: fixed;
-    padding-top: 50vh;
+    position: absolute;
+    padding-top: 40vh;
 }
 
 .linked_in{
-    position: fixed;
+    position: absolute;
     padding-left: 40vh;
     padding-top: 10vh;
 }
 
 .social_title{
-    position: fixed;
-    padding-top: 35vh;
+    position: absolute;
+    padding-top: 13vh;
+}
+
+/* hier begint de rating van hoe goed iemand is in de programmeer talen */
+
+.ranking {
+    height: 30vh;
+    margin-left: 10rem;
+}
+
+.box {
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.1rm;
+}
+
+.green {
+    background-color: green;
+}
+
+.fifty {
+    background: linear-gradient(to right, green 50%, white 50%);
+}
+
+.html-rank {
+    display: flex;
+}
+
+.css-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.js-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.php-rank {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.html-rank-bas h2, .html-rank-roberto h2, .html-rank-bastiaan h2{
+    margin-right: 7.2rem;
+}
+
+.html-rank-bas div, .html-rank-roberto div, .html-rank-bastiaan div{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.css-rank-bas h2, .css-rank-roberto h2, .css-rank-bastiaan h2{
+    margin-right: 8.4rem;
+}
+
+.css-rank-bas div, .css-rank-roberto div, .css-rank-bastiaan div{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.js-rank-bas div, .js-rank-roberto div, .js-rank-bastiaan div{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.php-rank-bas h2, .php-rank-roberto h2, .php-rank-bastiaan h2{
+    margin-right: 8.5rem;
+}
+
+.php-rank-bas div, .php-rank-roberto div, .php-rank-bastiaan div{
+    display: flex;
+    margin-left: 0.5rem;
 }
 
 /* Uitleg over de games */
@@ -314,93 +397,90 @@ body:not(div:first-of-type) {
     margin-left: 10%;
 }
 
+
 /* Canvas voor de game*/
 
 .game_main{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95vh;
+    flex-direction: column;
+    height: 94vh;
 }
 
-.game_main canvas{
-    z-index: 3;
+.game_main h1{
+    padding-top: 2%;
+    margin-bottom: 1.5%;
+    font-size: 35px;
 }
 
-#canvas_student2{
+/*Roberto's game CSS*/
+
+button{
+    all: unset;
+    cursor: pointer;
+    border: white 2.5px solid ;
+    border-radius: 25px;
+    width: 10vw;
+    height: 5vh;
+    text-align: center;
+}
+
+#display{
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(21, 80, 21);
+    background-image: url(./game_files/roberto/texures/images/vignette_texure.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 75%;
+    border: white 3.5px solid;
+}
+
+#display img{
+    display: none;
+    height: 30%;
+}
+
+#start{
+    background-color: rgb(24, 209, 24);
+}
+
+#hit{
+    display: none;
+    position: fixed;
+    z-index: -3;
+    margin-right: 65vw;
+    margin-top: 45vh;
+    background-color: rgb(24, 209, 24);
+}
+
+#pass{
+    display: none;
+    position: fixed;
+    z-index: -4;
+    margin-right: 65vw;
+    margin-top: 60vh;
+    background-color: rgb(255, 0, 0);
+}
+
+#cash_text{
+    position: fixed;
+    z-index: -5;
+    padding-right: 70vw;
+    padding-bottom: 58vh;
+}
+
+#canvas_student3 {
     width: 60%;
     height: 70%;
     border: white 5px solid;
 }
 
-/* hier begint de rating van hoe goed iemand is in de programmeer talen */
-
-.ranking {
-    height: 24vh;
-    margin-left: 10rem;
-}
-
-.box {
-    background-color: white;
-    height: 2rem;
-    width: 2rem;
-    margin: 0.1rm;
-}
-
-.green {
-    background-color: green;
-}
-
-.html-rank {
-    display: flex;
-}
-
-.css-rank {
-    display: flex;
-    margin-top: 0.5rem;
-}
-
-.js-rank {
-    display: flex;
-    margin-top: 0.5rem;
-}
-
-.php-rank {
-    display: flex;
-    margin-top: 0.5rem;
-}
-
-.html-rank-bas h2 {
-    margin-right: 5.4rem;
-}
-
-.html-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
-
-.css-rank-bas h2 {
-    margin-right: 6.3rem;
-}
-
-.css-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
-
-.js-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
-
-.php-rank-bas h2 {
-    margin-right: 6.3rem;
-}
-
-.php-rank-bas div {
-    display: flex;
-    margin-left: 0.5rem;
-}
 
 /* footer */
 
