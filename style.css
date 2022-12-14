@@ -442,6 +442,7 @@ button{
 }
 
 #display img{
+    z-index: -7;
     display: none;
     height: 30%;
 }
@@ -470,9 +471,18 @@ button{
 
 #cash_text{
     position: fixed;
-    z-index: -5;
+    z-index: -7;
     padding-right: 70vw;
     padding-bottom: 58vh;
+}
+
+#your_second_card {
+    position: fixed;
+    height: 21% !important;
+    margin-left: 10vw;
+    margin-top: 35vh;
+    z-index: -6;
+    
 }
 
 #canvas_student3 {
