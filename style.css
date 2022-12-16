@@ -510,15 +510,11 @@ button{
 
 #gamestarter {
     display: none;
-    all: unset;
-    cursor: pointer;
-    border: white 2.5px solid ;
-    border-radius: 25px;
-    width: 10vw;
-    height: 5vh;
-    text-align: center;
 }
 
+#settings {
+    display: none;
+}
 
 /* footer */
 
