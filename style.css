@@ -516,6 +516,10 @@ button{
     display: none;
 }
 
+#credits {
+    display: none;
+}
+
 /* footer */
 
 footer {
