@@ -505,6 +505,18 @@ button{
     margin: 4rem;
 }
 
+.wall {
+    background-color: darkslateblue;
+}
+
+.playerHead {
+    background-color: red;
+}
+
+.exit {
+    background-color: green;
+}
+
 /* footer */
 
 footer {
