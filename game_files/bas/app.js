@@ -46,10 +46,16 @@ function createGrid(rows, cols) {
     }
 }
 
-// window.addEventListener("keydown", function(event){
-  
-// })
+function player(){
+  start = document.getElementById(105).setAttribute("class", "playerHead")
 
+  // window.addEventListener("keydown", function(event){
+    
+  // })
+
+}
+
+player()
 
 
 function easyMode() {
