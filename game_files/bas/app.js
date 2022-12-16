@@ -1,5 +1,11 @@
-const buttons = document.getElementsByClassName("bas-buttons")
-buttons.style.display = "block"
+
+const btn = document.getElementById("button")
+const btn2 = document.getElementById("button2")
+const btn3 = document.getElementById("button3")
+const playerPosition = +document.getElementsByClassName("playerHead")[0].id
+let start = null
+let start2 = null
+let start3 = null
 
 function createGrid(rows, cols) {
     // Get a reference to the container element
@@ -34,20 +40,36 @@ function createGrid(rows, cols) {
   
     // Add the table to the container
     container.appendChild(table);
+
+    if (cols == 10) {
+      // .setAttribute("class", "playerHead")
+    }
 }
+
+// window.addEventListener("keydown", function(event){
+  
+// })
+
+
 
 function easyMode() {
     createGrid(10, 10)
-    buttons.style.display = "none"
+    btn.style.display = "none"
+    btn2.style.display = "none"
+    btn3.style.display = "none"
 }
 
 function normalMode() {
     createGrid(15, 15)
-    buttons.style.display = "none"
+    btn.style.display = "none"
+    btn2.style.display = "none"
+    btn3.style.display = "none"
 }
 
 function hardMode() {
     createGrid(20, 20)
-    buttons.style.display = "none"
+    btn.style.display = "none"
+    btn2.style.display = "none"
+    btn3.style.display = "none"
 }
 
