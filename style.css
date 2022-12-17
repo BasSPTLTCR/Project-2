@@ -502,7 +502,7 @@ button{
 .display-student3 table {
     display: flex;
     flex-direction: row;
-    margin: 4rem;
+    margin: 1rem;
 }
 
 .permWall, .wall {

@@ -184,6 +184,10 @@ function load() {
 
 
 
+
+
+// Nothing to touch here these are just here to select the difficulty and the home button and to end the game
+
 function easyMode() {
   createGrid(10, 10)
   btn.style.display = "none"
@@ -201,6 +205,11 @@ function normalMode() {
   btn.style.display = "none"
   btn2.style.display = "none"
   btn3.style.display = "none"
+  const tds = document.querySelectorAll("td")
+  for (const td of tds) {
+    td.style.width = "37px" 
+    td.style.height = "37px" 
+  }
   
 }
 
@@ -209,6 +218,11 @@ function hardMode() {
   btn.style.display = "none"
   btn2.style.display = "none"
   btn3.style.display = "none"
+  const tds = document.querySelectorAll("td")
+  for (const td of tds) {
+    td.style.width = "30px" 
+    td.style.height = "30px" 
+  }
 }
 
 function end() {
