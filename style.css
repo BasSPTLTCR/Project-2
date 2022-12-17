@@ -505,8 +505,18 @@ button{
     margin: 4rem;
 }
 
-.wall {
+.permWall, .wall {
     background-color: darkslateblue;
+}
+
+.invisible {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.retry-bas {
+    position: absolute;
+    margin-top: 42rem;
+    min-width: 6rem;
 }
 
 .playerHead {
@@ -515,6 +525,17 @@ button{
 
 .exit {
     background-color: green;
+}
+
+.finishButton {
+    position: absolute;
+    background-color: black;
+    display: block;
+    margin-top: 15rem;
+}
+
+.result-bas {
+    position: absolute;
 }
 
 /* footer */
