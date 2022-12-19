@@ -520,6 +520,18 @@ button{
     display: none;
 }
 
+#creditsdiv {
+    display: none;
+}
+
+#mute {
+    display: none;
+}
+
+#back {
+    display: none;
+}
+
 /* footer */
 
 footer {
