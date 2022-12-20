@@ -17,59 +17,307 @@ let nextMoveW = null
 let nextMoveS = null
 let movementFlag = false
 
+const maze0 = [
+  [2, 2, 2, 2, 0, 2, 2, 2, 2, 2],
+  [2, 0, 0, 1, 0, 0, 0, 0, 1, 2],
+  [2, 1, 0, 1, 0, 1, 1, 0, 1, 2],
+  [2, 1, 0, 0, 0, 1, 0, 0, 0, 2],
+  [2, 0, 0, 1, 0, 0, 0, 1, 1, 2],
+  [2, 0, 1, 1, 0, 1, 0, 0, 0, 2],
+  [2, 0, 1, 0, 0, 1, 0, 1, 0, 2],
+  [2, 0, 1, 1, 1, 1, 0, 1, 0, 2],
+  [2, 0, 0, 0, 0, 0, 1, 0, 0, 2],
+  [2, 2, 2, 2, 2, 3, 2, 2, 2, 2]
+];
+const maze1 = [
+  [2, 2, 2, 2, 0, 2, 2, 2, 2, 2],
+  [2, 0, 0, 0, 0, 1, 0, 0, 0, 2],
+  [2, 1, 0, 0, 0, 1, 0, 1, 0, 2],
+  [2, 1, 0, 1, 0, 1, 0, 1, 0, 2],
+  [2, 1, 0, 1, 0, 0, 0, 0, 0, 2],
+  [2, 1, 0, 1, 1, 1, 1, 0, 0, 2],
+  [2, 1, 0, 0, 0, 0, 1, 0, 0, 2],
+  [2, 1, 1, 1, 1, 0, 1, 1, 0, 2],
+  [2, 0, 0, 0, 1, 0, 0, 0, 0, 2],
+  [2, 2, 2, 2, 2, 3, 2, 2, 2, 2]
+];
+const maze2 = [
+  [2, 2, 2, 2, 0, 2, 2, 2, 2, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 0, 0, 0, 1, 1, 0, 2],
+  [2, 0, 0, 1, 1, 1, 0, 1, 0, 2],
+  [2, 0, 1, 0, 0, 0, 1, 0, 0, 2],
+  [2, 0, 0, 1, 1, 1, 1, 0, 1, 2],
+  [2, 1, 0, 0, 0, 1, 1, 0, 0, 2],
+  [2, 1, 0, 1, 1, 0, 1, 1, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 1, 0, 2],
+  [2, 2, 2, 2, 2, 3, 2, 2, 2, 2]
+];
+const maze3 = [
+  [2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2],
+];
+const maze4 = [
+  [2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2],
+];
+const maze5 = [
+  [2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2],
+];
+
 function createGrid(rows, cols) {
-  
+  // Will generate a random number to use for the maze
+  // r = Math.floor(Math.random() * 3)
+  r = 0
+  // console.log(r);
+
   // Create a table element
   table = document.createElement('table');
-  
+
   // Loop through the specified number of rows
   for (let i = 0; i < rows; i++) {
-    
+
     // Create a row element
     const row = document.createElement('tr');
     row.setAttribute("id", i * 100 + 100)
-    
+
     // Loop through the specified number of columns
     for (let j = 0; j < cols; j++) {
-      
+
       // Create a cell element
       const cell = document.createElement('td');
-      
+
       // Adds an attribute to the actual tiles that will allow the player to move
       cell.setAttribute("id", i * 100 + 100 + j + 1)
-      
-      // Looks for the outer walls on the easy difficulty
-      if (cols == 10 && (j > 4 || j < 4) && i == 0 || (j == 0 || j == 9) && (i > 0 && i != 9) || (j > 5 || j < 5) && i == 9) {
-        
-        // Gives the outer walls except for the player position the wall attribute
-        cell.setAttribute("class", "permWall")
-        
-        // Looks for the amount of columns used with the easy maze to place the exit
-      } else if (cols == 10 && j == 5 && i == 9) {
-        
-        // Gives the one exit a class so it can be seen at all times
-        cell.setAttribute("class", "exit")
+
+
+      if (cols == 10) {
+        if (r == 0) {
+          // Looks for the right amount of columns 
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 1
+            if (maze0[i][j] == 1) {
+              cell.setAttribute("class", "wall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 2
+            if (maze0[i][j] == 2) {
+              cell.setAttribute("class", "permWall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 3
+            if (maze0[i][j] == 3) {
+              cell.setAttribute("class", "exit")
+            }
+          }
+        }
+        if (r == 1) {
+          // Looks for the right amount of columns 
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 1
+            if (maze1[i][j] == 1) {
+              cell.setAttribute("class", "wall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 2
+            if (maze1[i][j] == 2) {
+              cell.setAttribute("class", "permWall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 3
+            if (maze1[i][j] == 3) {
+              cell.setAttribute("class", "exit")
+            }
+          }
+        }
+        if (r == 2) {
+          // Looks for the right amount of columns 
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 1
+            if (maze2[i][j] == 1) {
+              cell.setAttribute("class", "wall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 2
+            if (maze2[i][j] == 2) {
+              cell.setAttribute("class", "permWall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 10) {
+            // Looks if the number from the array in the array has the number 3
+            if (maze2[i][j] == 3) {
+              cell.setAttribute("class", "exit")
+            }
+          }
+        }
       } else if (cols == 15) {
-        
-      } else if (cols == 20) {
-        
-      }
-      
-      // Maze randomization
-      if (cols == 10 && ((j > 0 && j < 9) && (i > 0 && i < 9))) {
-        x = Math.floor(Math.random() * 10)
-        if (x < 4) {
-          cell.setAttribute("class", "wall")
+
+        if (r == 0) {
+          // Looks for the right amount of columns 
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 1
+            if (maze3[i][j] == 1) {
+              cell.setAttribute("class", "wall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 2
+            if (maze3[i][j] == 2) {
+              cell.setAttribute("class", "permWall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 3
+            if (maze3[i][j] == 3) {
+              cell.setAttribute("class", "exit")
+            }
+          }
+        }
+
+        if (r == 1) {
+          // Looks for the right amount of columns 
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 1
+            if (maze3[i][j] == 1) {
+              cell.setAttribute("class", "wall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 2
+            if (maze3[i][j] == 2) {
+              cell.setAttribute("class", "permWall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 3
+            if (maze3[i][j] == 3) {
+              cell.setAttribute("class", "exit")
+            }
+          }
+        }
+
+        if (r == 2) {
+          // Looks for the right amount of columns 
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 1
+            if (maze3[i][j] == 1) {
+              cell.setAttribute("class", "wall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 2
+            if (maze3[i][j] == 2) {
+              cell.setAttribute("class", "permWall")
+            }
+          }
+          // Looks for the right amount of columns
+          if (cols == 15) {
+            // Looks if the number from the array in the array has the number 3
+            if (maze3[i][j] == 3) {
+              cell.setAttribute("class", "exit")
+            }
+          }
         }
       }
-      
+
+
+      // Big comment for safety and test something out
+      //     // Looks for the outer walls on the easy difficulty
+      //     if (cols == 10 && ((j > 4 || j < 4) && i == 0 || (j == 0 || j == 9) && (i > 0 && i != 9) || (j > 5 || j < 5) && i == 9)) {
+      //       console.log("cols 10");
+      //       // Gives the outer walls except for the player position the wall attribute
+      //       cell.setAttribute("class", "permWall")
+
+      //       // Looks for the amount of columns used with the easy maze to place the exit
+      //     } else if (cols == 10 && j == 5 && i == 9) {
+      //       console.log("cols 10 exit");
+      //       // Gives the one exit a class so it can be seen at all times
+      //       cell.setAttribute("class", "exit")
+
+      //       // Looks for the outer walls on the normal difficulty
+      //     } else if (cols == 15) {
+      //       console.log("cols 15");
+
+
+      //       // Looks for the amount of columns used with the normal maze to place the exit
+      //     } else if (cols == 15) {
+
+      //     } else if (cols == 20) {
+
+      //     }
+
+      //     // Maze randomization
+      //     // if (cols == 10 && ((j > 0 && j < 9) && (i > 0 && i < 9))) {
+      //     //   x = Math.floor(Math.random() * 10)
+      //     //   if (x < 3) {
+      //     //     cell.setAttribute("class", "wall")
+      //     //   }
+      //     // }
+
       // Add the cell to the row
       row.appendChild(cell);
-      
+
     }
     // Add the row to the table
     table.appendChild(row);
   }
+
   retry = document.createElement("button")
   retry.setAttribute("class", "retry-bas")
   retry.setAttribute("onclick", "home()")
@@ -79,6 +327,7 @@ function createGrid(rows, cols) {
   // Add the table to the container
   container.appendChild(table);
 }
+
 
 function load() {
   movementFlag = true
@@ -90,26 +339,26 @@ function load() {
   playerPosition = +document.getElementsByClassName("playerHead")[0].id
   startPosition = playerPosition + 100
   document.getElementById(startPosition).classList.remove("wall")
-  
+
   window.addEventListener("keydown", function (event) {
     // Looks for when the key d is pressed and if the movement that is about to perform will hit a div with the class wall and looks for the permanent walls that will stay visible also as long as the next movement that is about to run is going into the finish
     if (event.key == "d" && this.document.getElementById(nextMoveD).classList.contains("wall") != true && this.document.getElementById(nextMoveD).classList.contains("permWall") != true && this.document.getElementById(nextMoveD).classList.contains("exit") != true) {
-      
+
       // These three lines will provide moving the player to the right
       this.document.getElementById(playerPosition).classList.remove("playerHead")
       playerPosition = playerPosition + 100
       this.document.getElementById(playerPosition).classList.add("playerHead")
-      
+
       // These four lines will update the next movement of the player on every step
       nextMoveD = playerPosition + 100
       nextMoveA = playerPosition - 100
       nextMoveW = playerPosition - 1
       nextMoveS = playerPosition + 1
 
-      
+
       // Here it will look for the d key to be pressed and when the exit is in the providing move
     } else if (event.key == "d" && this.document.getElementById(nextMoveD).classList.contains("exit") == true) {
-      
+
       // These four lines will provide moving the player to the right and removing the exit class
       this.document.getElementById(playerPosition).classList.remove("playerHead")
       playerPosition = playerPosition + 100
@@ -123,12 +372,12 @@ function load() {
     }
     // Looks for when the key a is pressed and looks if the provided move will not be hold back by a wall or a permWall
     if (event.key == "a" && (nextMoveA != 5 && this.document.getElementById(nextMoveA).classList.contains("wall") != true && this.document.getElementById(nextMoveA).classList.contains("permWall") != true)) {
-      
+
       // These three lines will provide moving the player to the left
       this.document.getElementById(playerPosition).classList.remove("playerHead")
       playerPosition = playerPosition - 100
       this.document.getElementById(playerPosition).classList.add("playerHead")
-      
+
       // These four lines will update the next movement of the player on every step
       nextMoveD = playerPosition + 100
       nextMoveA = playerPosition - 100
@@ -137,12 +386,12 @@ function load() {
     }
     // Looks for when the key w is pressed and looks if the provided move will not be hold back by a wall or a permWall
     if (event.key == "w" && (nextMoveW > 105 && this.document.getElementById(nextMoveW).classList.contains("wall") != true && this.document.getElementById(nextMoveW).classList.contains("permWall") != true)) {
-      
+
       // These three lines will provide moving the player up
       this.document.getElementById(playerPosition).classList.remove("playerHead")
       playerPosition = playerPosition - 1
       this.document.getElementById(playerPosition).classList.add("playerHead")
-      
+
       // These four lines will update the next movement of the player on every step
       nextMoveD = playerPosition + 100
       nextMoveA = playerPosition - 100
@@ -151,12 +400,12 @@ function load() {
     }
     // Looks for whhen the key s is pressed and looks if the provided move will not be hold back by a wall or a permWall
     if (event.key == "s" && this.document.getElementById(nextMoveS).classList.contains("wall") != true && this.document.getElementById(nextMoveS).classList.contains("permWall") != true) {
-      
+
       // These three lines will provide moving the player down
       this.document.getElementById(playerPosition).classList.remove("playerHead")
       playerPosition = playerPosition + 1
       this.document.getElementById(playerPosition).classList.add("playerHead")
-      
+
       // These four lines will update the next movement of the player on every step
       nextMoveD = playerPosition + 100
       nextMoveA = playerPosition - 100
@@ -179,7 +428,7 @@ function load() {
       }
     }
   })
-  
+
 }
 
 
@@ -207,10 +456,14 @@ function normalMode() {
   btn3.style.display = "none"
   const tds = document.querySelectorAll("td")
   for (const td of tds) {
-    td.style.width = "37px" 
-    td.style.height = "37px" 
+    td.style.width = "30px"
+    td.style.height = "30px"
   }
-  
+  nextMoveD = 105 + 100
+  nextMoveA = 105 - 100
+  nextMoveW = 105 - 1
+  nextMoveS = 105 + 1
+  load()
 }
 
 function hardMode() {
@@ -220,8 +473,8 @@ function hardMode() {
   btn3.style.display = "none"
   const tds = document.querySelectorAll("td")
   for (const td of tds) {
-    td.style.width = "30px" 
-    td.style.height = "30px" 
+    td.style.width = "30px"
+    td.style.height = "30px"
   }
 }
 
