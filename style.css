@@ -276,6 +276,7 @@ body:not(div:first-of-type) {
 
 .port-info {
     display: flex;
+    align-items: center;
 }
 
 .port-info p {
