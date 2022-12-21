@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth;
 }
 
-h2{
+h2 {
     font-size: 2rem;
 }
 
@@ -269,7 +269,8 @@ body:not(div:first-of-type) {
     margin: 0rem 10rem;
 }
 
-.port-sect div:first-child, .port-sect-bas div:first-child {
+.port-sect div:first-child,
+.port-sect-bas div:first-child {
     margin-left: 16rem;
 }
 
@@ -292,13 +293,13 @@ body:not(div:first-of-type) {
     padding-top: 40vh;
 }
 
-.linked_in{
+.linked_in {
     position: absolute;
     padding-left: 40vh;
     padding-top: 10vh;
 }
 
-.social_title{
+.social_title {
     position: absolute;
     padding-top: 13vh;
 }
@@ -344,54 +345,68 @@ body:not(div:first-of-type) {
     margin-top: 0.5rem;
 }
 
-.html-rank-bas h2, .html-rank-roberto h2, .html-rank-bastiaan h2{
+.html-rank-bas h2,
+.html-rank-roberto h2,
+.html-rank-bastiaan h2 {
     margin-right: 7.2rem;
 }
 
-.html-rank-bas div, .html-rank-roberto div, .html-rank-bastiaan div{
+.html-rank-bas div,
+.html-rank-roberto div,
+.html-rank-bastiaan div {
     display: flex;
     margin-left: 0.5rem;
 }
 
-.css-rank-bas h2, .css-rank-roberto h2, .css-rank-bastiaan h2{
+.css-rank-bas h2,
+.css-rank-roberto h2,
+.css-rank-bastiaan h2 {
     margin-right: 8.4rem;
 }
 
-.css-rank-bas div, .css-rank-roberto div, .css-rank-bastiaan div{
+.css-rank-bas div,
+.css-rank-roberto div,
+.css-rank-bastiaan div {
     display: flex;
     margin-left: 0.5rem;
 }
 
-.js-rank-bas div, .js-rank-roberto div, .js-rank-bastiaan div{
+.js-rank-bas div,
+.js-rank-roberto div,
+.js-rank-bastiaan div {
     display: flex;
     margin-left: 0.5rem;
 }
 
-.php-rank-bas h2, .php-rank-roberto h2, .php-rank-bastiaan h2{
+.php-rank-bas h2,
+.php-rank-roberto h2,
+.php-rank-bastiaan h2 {
     margin-right: 8.5rem;
 }
 
-.php-rank-bas div, .php-rank-roberto div, .php-rank-bastiaan div{
+.php-rank-bas div,
+.php-rank-roberto div,
+.php-rank-bastiaan div {
     display: flex;
     margin-left: 0.5rem;
 }
 
 /* Uitleg over de games */
 
-.uitleg_game_section{
+.uitleg_game_section {
     margin-top: 10%;
     margin-left: 5%;
     width: 100vw;
     height: 75vh;
 }
 
-.uitleg_game_main{
+.uitleg_game_main {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
 
-.uitleg_game_main img{
+.uitleg_game_main img {
     margin-top: 12%;
     margin-right: 5%;
     margin-left: 10%;
@@ -400,7 +415,7 @@ body:not(div:first-of-type) {
 
 /* Canvas voor de game*/
 
-.game_main{
+.game_main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -408,7 +423,7 @@ body:not(div:first-of-type) {
     height: 94vh;
 }
 
-.game_main h1{
+.game_main h1 {
     padding-top: 2%;
     margin-bottom: 1.5%;
     font-size: 35px;
@@ -416,24 +431,24 @@ body:not(div:first-of-type) {
 
 /*Roberto's game CSS*/
 
-button{
+button {
     all: unset;
     cursor: pointer;
-    border: white 2.5px solid ;
+    border: white 2.5px solid;
     border-radius: 25px;
     width: 10vw;
     height: 5vh;
     text-align: center;
 }
 
-#display{
+#display {
     z-index: 4;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     background-color: rgb(21, 80, 21);
-    background-image: url(./game_files/roberto/texures/images/vignette_texure.png);
+    background-image: url(./game_files/roberto/textures/images/vignette_texure.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 80%;
@@ -441,16 +456,17 @@ button{
     border: white 3.5px solid;
 }
 
-#display img{
+#display img {
+    z-index: -7;
     display: none;
     height: 30%;
 }
 
-#start{
+#start {
     background-color: rgb(24, 209, 24);
 }
 
-#hit{
+#hit_btn {
     display: none;
     position: fixed;
     z-index: -3;
@@ -459,7 +475,7 @@ button{
     background-color: rgb(24, 209, 24);
 }
 
-#pass{
+#pass {
     display: none;
     position: fixed;
     z-index: -4;
@@ -468,11 +484,30 @@ button{
     background-color: rgb(255, 0, 0);
 }
 
-#cash_text{
+#your_second_card {
     position: fixed;
-    z-index: -5;
-    padding-right: 70vw;
-    padding-bottom: 58vh;
+    height: 21% !important;
+    margin-left: 10vw;
+    margin-top: 35vh;
+    z-index: -6;
+
+}
+
+#dealer_second_cards{
+    position: fixed;
+    height: 21% !important;
+    margin-left: 10vw;
+    margin-top: -35vh;
+    z-index: -6;
+
+}
+
+#your_hit_card_1{
+    position: fixed;
+    height: 21% !important;
+    margin-left: 20vw;
+    margin-top: 35vh;
+    z-index: -6;
 }
 
 
