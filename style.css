@@ -553,6 +553,7 @@ button{
     width: 80%;
     height: 75%;
     border: white 3.5px solid;
+    color: black;
 }
 
 #button_b {
@@ -588,6 +589,27 @@ button{
 
 #back {
     display: none;
+}
+
+#blackstartscreen {
+    display: none;
+    background-color: black;
+    opacity: 0.5;
+}
+
+#blackstartscreen h2, h3 {
+    color: gray;
+}
+
+#gamenameb {
+    display: none;
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 25px;
+}
+
+#gamenameb h1 {
+    color: white;
 }
 
 /* footer */
