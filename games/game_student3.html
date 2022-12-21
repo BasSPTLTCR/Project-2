@@ -55,7 +55,12 @@
 
     <main class="game_main">
         <h1>Memory maze</h1>
-        <canvas id="canvas_student3"></canvas>
+        
+        <section class="display-student3" id="grid">
+            <button class="bas-buttons" id="button" onclick="easyMode()">Easy</button>
+            <button class="bas-buttons" id="button2" onclick="normalMode()">Normal</button>
+            <button class="bas-buttons" id="button3" onclick="hardMode()">Hard</button>
+        </section>
     </main>
 
     <!-- dit is de footer -->
@@ -64,6 +69,7 @@
         <p>Team G, all rights reserved.</p>
     </footer>
 
+    <script defer src="../game_files/bas/app.js"></script>
 </body>
 
 </html>
