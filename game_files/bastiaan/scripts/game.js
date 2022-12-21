@@ -50,7 +50,6 @@ function loadGame() {
     gameMusic.play();
     gameMusic.loop = true;
     startScreen.style.display = "block"
-    addEventListener("keypress")
 }
 
 function loadSettings() {
