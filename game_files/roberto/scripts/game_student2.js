@@ -57,6 +57,7 @@ let start_btn = document.getElementById("start");
 let your_first_card = document.getElementById("your_first_card");
 let your_second_card = document.getElementById("your_second_card");
 let your_hit_card_1 = document.getElementById("your_hit_card_1");
+let your_hit_card_2 = document.getElementById("your_hit_card_2");
 let dealer_cards = document.getElementById("dealer_cards");
 let dealer_second_cards = document.getElementById("dealer_second_cards");
 let hit_btn = document.getElementById("hit_btn");
@@ -64,13 +65,15 @@ let pass = document.getElementById("pass");
 
 
 /* Imports audio from the sounds folder. */
-let audio = new Audio('../game_files/roberto/sounds/giving_card.mp3');
+let dealing_fx = new Audio('../game_files/roberto/sounds/dealing.mp3');
+let hit_fx = new Audio('../game_files/roberto/sounds/hit.mp3');
+
 
 /*  */
 let random_card;
 
 function start() {
-    audio.play();
+    dealing_fx.play();
     start_btn.style.display = "none";
     randomize();
     your_first_card.src = random_card;
@@ -89,12 +92,21 @@ function start() {
 }
 
 function hit() {
-    your_hit_card_1.style.display = "block";
+    let count = 0;
+    count += 1;
+    hit_fx.play();
+    if(count == 1){
+        your_hit_card_1.style.display = "block";
+        your_hit_card_1.src = random_card;
+    }
+    if(count == 2){
+        your_hit_card_2.style.display = "block";  
+        your_hit_card_2.src = random_card; 
+    }
     randomize();
-    your_hit_card_1.src = random_card;
-    randomize();
-    dealer_second_cards.src = random_card;
-    dealer_second_cards.style.display = "block";
+    // randomize();
+    // dealer_second_cards.src = random_card;
+    // dealer_second_cards.style.display = "block";
 }
 
 function randomize() {

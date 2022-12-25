@@ -502,7 +502,7 @@ button {
     z-index: -6;
 
 }
-
+ 
 #your_hit_card_1{
     position: fixed;
     height: 21% !important;
@@ -510,6 +510,28 @@ button {
     margin-top: 35vh;
     z-index: -6;
 }
+
+#your_hit_card_2{
+    position: fixed;
+    height: 21% !important;
+    margin-left: 30vw;
+    margin-top: 35vh;
+    z-index: -6;
+}
+
+#display h2{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    width: 75vw;
+    z-index: -10;
+}
+
+#player_value{
+    height: 55vh !important;
+}
+
 
 
 /* Bas game CSS */
