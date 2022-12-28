@@ -3,18 +3,18 @@ const container = document.getElementById('grid');
 const btn = document.getElementById("button")
 const btn2 = document.getElementById("button2")
 const btn3 = document.getElementById("button3")
-let table = null
-let time = null
-let time2 = null
-let result = null
-let playerPosition = null
-let start = null
-let start2 = null
-let start3 = null
-let nextMoveD = null
-let nextMoveA = null
-let nextMoveW = null
-let nextMoveS = null
+let table
+let time
+let time2
+let result
+let playerPosition
+let start
+let start2
+let start3
+let nextMoveD
+let nextMoveA
+let nextMoveW
+let nextMoveS
 let movementFlag = false
 
 // Made by Bas
