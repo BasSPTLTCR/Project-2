@@ -355,6 +355,7 @@ function createGrid(rows, cols) {
 }
 
 
+
 function load() {
   movementFlag = true
   timeFlag = false
