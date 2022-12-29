@@ -476,7 +476,7 @@ button {
     background-color: rgb(24, 209, 24);
 }
 
-#pass {
+#pass_btn {
     display: none;
     position: fixed;
     z-index: -4;
@@ -521,7 +521,7 @@ button {
 
 #display h2{
     position: fixed;
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 65vh;
     width: 75vw;
@@ -531,8 +531,6 @@ button {
 #player_value{
     height: 55vh !important;
 }
-
-
 
 /* Bas game CSS */
 
