@@ -542,7 +542,7 @@ button {
     z-index: -6;
 }
 
-#your_hit_card_1 {
+#your_third_card {
     position: fixed;
     height: 21% !important;
     margin-left: 20vw;
@@ -550,10 +550,18 @@ button {
     z-index: -6;
 }
 
-#your_hit_card_2 {
+#your_fourth_card {
     position: fixed;
     height: 21% !important;
     margin-left: 30vw;
+    margin-top: 35vh;
+    z-index: -6;
+}
+
+#your_fifth_card {
+    position: fixed;
+    height: 21% !important;
+    margin-left: 40vw;
     margin-top: 35vh;
     z-index: -6;
 }
@@ -571,7 +579,7 @@ button {
     height: 55vh !important;
 }
 
-#reset_btn{
+#reset_btn {
     display: none;
     position: fixed;
     z-index: -4;
@@ -579,6 +587,11 @@ button {
     margin-top: -60vh;
     background: center white no-repeat url(/game_files/roberto/textures/images/reset_btn.svg);
     width: 5vw;
+}
+
+#result{
+    height: 0vh !important;
+    width: 0vw !important;
 }
 
 /* Bas game CSS */
