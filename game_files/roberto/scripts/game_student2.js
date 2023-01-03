@@ -72,6 +72,7 @@ let dealer_value = document.getElementById("dealer_value");
 let player_value = document.getElementById("player_value");
 /* The result */
 let result = document.getElementById("result")
+let result_div = document.getElementById("result_div")
 
 /* Imports audio from the sounds folder. */
 let dealing_fx = new Audio('../game_files/roberto/sounds/dealing.mp3');
@@ -195,16 +196,24 @@ function check() {
         }
     }
     if (total_player > total_dealer) {
-
+        result.style.display = "block";
+        result.innerText = "You won";
+        result_menu();
     }
     if (total_player < total_dealer) {
-        console.log("You lost");
+        result.style.display = "block";
+        result.innerText = "You lost";
+        result_menu();
     }
     if (total_player == total_dealer) {
-        console.log("Draw");
+        result.style.display = "block";
+        result.innerText = "Draw";
+        result_menu();
     }
     if (total_player == 21) {
-        console.log("you won")
+        result.style.display = "block";
+        result.innerText = "You won by blackjack!";
+        result_menu();
     }
 }
 
@@ -226,6 +235,13 @@ function randomize_dealer() {
     value_dealer = randomCard.value;
     total_dealer += value_dealer;
     dealer_value.innerText = "Dealer: " + total_dealer;
+}
+
+function result_menu(){
+    reset_btn.style.marginRight = "0vw";
+    reset_btn.style.marginTop = "5vh";
+    reset_btn.style.width = "15vw";
+    result_div.style.display = "block";
 }
 
 function reload() {

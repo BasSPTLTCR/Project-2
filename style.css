@@ -582,7 +582,7 @@ button {
 #reset_btn {
     display: none;
     position: fixed;
-    z-index: -4;
+    z-index: 0;
     margin-right: -72vw;
     margin-top: -60vh;
     background: center white no-repeat url(/game_files/roberto/textures/images/reset_btn.svg);
@@ -590,8 +590,21 @@ button {
 }
 
 #result{
-    height: 0vh !important;
-    width: 0vw !important;
+    font-size: 300%;
+    height: 15vh !important;
+    width: 20vw !important;
+    text-align: center;
+    z-index: -3 !important;
+}
+
+#result_div{
+    display: none;
+    width: 30vw;
+    height: 30vh;
+    background-color: #000;
+    border: white 2.5px solid;
+    border-radius: 25px;
+    z-index: -4;
 }
 
 /* Bas game CSS */
