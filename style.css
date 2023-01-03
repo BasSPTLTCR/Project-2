@@ -410,7 +410,8 @@ body:not(div:first-of-type) {
 .uitleg_game_main img {
     margin-top: 12%;
     margin-right: 5%;
-    margin-left: 10%;
+    margin-left: 5%;
+    width: 30vw;
 }
 
 
@@ -485,25 +486,63 @@ button {
     background-color: rgb(255, 0, 0);
 }
 
+#your_first_card {
+    position: fixed;
+    height: 21% !important;
+    margin-left: 0vw;
+    margin-top: 35vh;
+    z-index: -6;
+}
+
 #your_second_card {
     position: fixed;
     height: 21% !important;
     margin-left: 10vw;
     margin-top: 35vh;
     z-index: -6;
-
 }
 
-#dealer_second_cards{
+#dealer_card {
+    position: fixed;
+    height: 21% !important;
+    margin-left: 0vw;
+    margin-top: -35vh;
+    z-index: -6;
+}
+
+#dealer_second_card {
     position: fixed;
     height: 21% !important;
     margin-left: 10vw;
     margin-top: -35vh;
     z-index: -6;
-
 }
- 
-#your_hit_card_1{
+
+#dealer_third_card {
+    position: fixed;
+    height: 21% !important;
+    margin-left: 20vw;
+    margin-top: -35vh;
+    z-index: -6;
+}
+
+#dealer_fourth_card {
+    position: fixed;
+    height: 21% !important;
+    margin-left: 30vw;
+    margin-top: -35vh;
+    z-index: -6;
+}
+
+#dealer_fifth_card {
+    position: fixed;
+    height: 21% !important;
+    margin-left: 40vw;
+    margin-top: -35vh;
+    z-index: -6;
+}
+
+#your_hit_card_1 {
     position: fixed;
     height: 21% !important;
     margin-left: 20vw;
@@ -511,7 +550,7 @@ button {
     z-index: -6;
 }
 
-#your_hit_card_2{
+#your_hit_card_2 {
     position: fixed;
     height: 21% !important;
     margin-left: 30vw;
@@ -519,7 +558,7 @@ button {
     z-index: -6;
 }
 
-#display h2{
+#display h2 {
     position: fixed;
     display: none;
     flex-direction: column;
@@ -528,8 +567,18 @@ button {
     z-index: -10;
 }
 
-#player_value{
+#player_value {
     height: 55vh !important;
+}
+
+#reset_btn{
+    display: none;
+    position: fixed;
+    z-index: -4;
+    margin-right: -72vw;
+    margin-top: -60vh;
+    background: center white no-repeat url(/game_files/roberto/textures/images/reset_btn.svg);
+    width: 5vw;
 }
 
 /* Bas game CSS */
@@ -562,7 +611,8 @@ button {
     margin: 1rem;
 }
 
-.permWall, .wall {
+.permWall,
+.wall {
     background-color: darkslateblue;
 }
 
@@ -597,7 +647,7 @@ button {
 
 /* Bastiaan game CSS */
 
-#display_b{
+#display_b {
     z-index: 4;
     display: flex;
     flex-direction: column;
@@ -614,13 +664,13 @@ button {
 
 #button_b {
     all: unset;
-   cursor: pointer;
-   border: white 2.5px solid ;
+    cursor: pointer;
+    border: white 2.5px solid;
     border-radius: 25px;
-   width: 10vw;
-   height: 5vh;
+    width: 10vw;
+    height: 5vh;
     text-align: center;
-    
+
 }
 
 #gamestarter {
@@ -653,7 +703,8 @@ button {
     opacity: 0.5;
 }
 
-#blackstartscreen h2, h3 {
+#blackstartscreen h2,
+h3 {
     color: gray;
 }
 
