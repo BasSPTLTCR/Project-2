@@ -599,8 +599,8 @@ button {
 
 #result_div{
     display: none;
-    width: 30vw;
-    height: 30vh;
+    width: 20vw;
+    height: 20vh;
     background-color: #000;
     border: white 2.5px solid;
     border-radius: 25px;

@@ -149,21 +149,32 @@ function hit() {
         your_fifth_card.src = src;
     }
     if (total_player > 21) {
-        check();
+        result.style.display = "block";
+        result.innerText = "You lost";
+        result_menu();
+
         pass_btn.setAttribute("disabled", "disabled")
         pass_btn.style.backgroundColor = "grey";
         hit_btn.style.backgroundColor = "grey";
         hit_btn.setAttribute("disabled", "disabled")
-        console.log("You beeg noob lost")
+    }
+    if (total_player == 21) {
+        result.style.display = "block";
+        result.innerText = "You won";
+        result_menu();
+        pass_btn.setAttribute("disabled", "disabled")
+        pass_btn.style.backgroundColor = "grey";
+        hit_btn.style.backgroundColor = "grey";
+        hit_btn.setAttribute("disabled", "disabled");
     }
 }
 
 function pass() {
     check();
-    pass_btn.setAttribute("disabled", "disabled")
+    pass_btn.setAttribute("disabled", "disabled");
     pass_btn.style.backgroundColor = "grey";
     hit_btn.style.backgroundColor = "grey";
-    hit_btn.setAttribute("disabled", "disabled")
+    hit_btn.setAttribute("disabled", "disabled");
 }
 
 let count_dealer = 0;
@@ -171,29 +182,35 @@ let count_dealer = 0;
 function check() {
     dealing_fx.play();
     randomize_dealer();
+    dealer_second_card.style.display = "block";
     dealer_second_card.src = src_dealer;
     while (total_dealer <= 16) {
         console.log("dealer count: " + count_dealer)
         count_dealer += 1;
         console.log("Dealer var: " + total_dealer)
         if (count_dealer == 1) {
-            randomize_dealer();
-            dealing_fx.play();
-            dealer_third_card.style.display = "block";
-            dealer_third_card.src = src_dealer;
+                randomize_dealer();
+                dealing_fx.play();
+                dealer_third_card.style.display = "block";
+                dealer_third_card.src = src_dealer;
         }
         if (count_dealer == 2) {
-            randomize_dealer();
-            dealing_fx.play();
-            dealer_fourth_card.style.display = "block";
-            dealer_fourth_card.src = src_dealer;
+                randomize_dealer();
+                dealing_fx.play();
+                dealer_fourth_card.style.display = "block";
+                dealer_fourth_card.src = src_dealer;
         }
         if (count_dealer == 3) {
-            randomize_dealer();
-            dealing_fx.play();
-            dealer_fifth_card.style.display = "block";
-            dealer_fifth_card.src = src_dealer;
+                randomize_dealer();
+                dealing_fx.play();
+                dealer_fifth_card.style.display = "block";
+                dealer_fifth_card.src = src_dealer;
         }
+    }
+    if (total_dealer > 21){
+        result.style.display = "block";
+        result.innerText = "You won";
+        result_menu(); 
     }
     if (total_player > total_dealer) {
         result.style.display = "block";
@@ -201,9 +218,16 @@ function check() {
         result_menu();
     }
     if (total_player < total_dealer) {
-        result.style.display = "block";
-        result.innerText = "You lost";
-        result_menu();
+        if (total_dealer > 21){
+            result.style.display = "block";
+            result.innerText = "You won";
+            result_menu();
+        }
+        else{
+            result.style.display = "block";
+            result.innerText = "You lost";
+            result_menu();
+        }
     }
     if (total_player == total_dealer) {
         result.style.display = "block";
@@ -212,7 +236,7 @@ function check() {
     }
     if (total_player == 21) {
         result.style.display = "block";
-        result.innerText = "You won by blackjack!";
+        result.innerText = "You won";
         result_menu();
     }
 }
