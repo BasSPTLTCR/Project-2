@@ -75,12 +75,42 @@ let result = document.getElementById("result")
 let result_div = document.getElementById("result_div")
 
 /* Imports audio from the sounds folder. */
+/* Gets all cards from the texure folder. */
+const sounds = [
+    { src: "../game_files/roberto/sounds/2.wav", value: 2 },
+    { src: "../game_files/roberto/sounds/3.wav", value: 3 },
+    { src: "../game_files/roberto/sounds/4.wav", value: 4 },
+    { src: "../game_files/roberto/sounds/5.wav", value: 5 },
+    { src: "../game_files/roberto/sounds/6.wav", value: 6 },
+    { src: "../game_files/roberto/sounds/7.wav", value: 7 },
+    { src: "../game_files/roberto/sounds/8.wav", value: 8 },
+    { src: "../game_files/roberto/sounds/9.wav", value: 9 },
+    { src: "../game_files/roberto/sounds/10.wav", value: 10 },
+    { src: "../game_files/roberto/sounds/11.wav", value: 11 },
+    { src: "../game_files/roberto/sounds/12.wav", value: 12 },
+    { src: "../game_files/roberto/sounds/13.wav", value: 13 },
+    { src: "../game_files/roberto/sounds/14.wav", value: 14 },
+    { src: "../game_files/roberto/sounds/15.wav", value: 15 },
+    { src: "../game_files/roberto/sounds/16.wav", value: 16 },
+    { src: "../game_files/roberto/sounds/17.wav", value: 17 },
+    { src: "../game_files/roberto/sounds/18.wav", value: 18 },
+    { src: "../game_files/roberto/sounds/19.wav", value: 19 },
+    { src: "../game_files/roberto/sounds/20.wav", value: 20 },
+    { src: "../game_files/roberto/sounds/21.wav", value: 21 },
+];
+
 let dealing_fx = new Audio('../game_files/roberto/sounds/dealing.mp3');
+let anothercard_fx = new Audio('../game_files/roberto/sounds/another_card.wav');
+let blackjack_fx = new Audio('../game_files/roberto/sounds/blackjack.wav');
+let dealerbust_fx = new Audio('../game_files/roberto/sounds/dealer_bust.wav');
+let dealerwins_fx = new Audio('../game_files/roberto/sounds/dealer_wins.wav');
+
 
 /* Default values */
 let src;
 let total_player = 0;
 let total_dealer = 0;
+let voice_effects_on = true;
 
 function start() {
     hit_btn.setAttribute("disabled", "disabled")
@@ -98,24 +128,24 @@ function start() {
         dealing_fx.play();
         your_first_card.style.display = "block";
         your_first_card.src = src;
-    }, 750);
+    }, 1000);
     setTimeout(() => {
         randomize();
         dealing_fx.play();
         your_second_card.style.display = "block";
         your_second_card.src = src;
-    }, 1500);
+    }, 2000);
     setTimeout(() => {
         randomize_dealer();
         dealing_fx.play();
         dealer_card.style.display = "block";
         dealer_card.src = src_dealer;
-    }, 2250);
+    }, 3000);
     setTimeout(() => {
         dealing_fx.play();
         dealer_second_card.style.display = "block";
         dealer_second_card.src = "http://127.0.0.1:5500/game_files/roberto/textures/cards/card_back.png";
-    }, 3000);
+    }, 4000);
     hit_btn.style.display = "block";
     pass_btn.style.display = "block";
     setTimeout(() => {
@@ -123,7 +153,8 @@ function start() {
         pass_btn.removeAttribute("disabled");
         hit_btn.style.backgroundColor = "rgb(24, 209, 24)";
         pass_btn.style.backgroundColor = "rgb(255, 0, 0)";
-    }, 3000);
+        anothercard_fx.play();
+    }, 5000);
 }
 
 let count = 0;
@@ -152,6 +183,7 @@ function hit() {
         result.style.display = "block";
         result.innerText = "You lost";
         result_menu();
+        dealerwins_fx.play();
 
         pass_btn.setAttribute("disabled", "disabled")
         pass_btn.style.backgroundColor = "grey";
@@ -159,9 +191,13 @@ function hit() {
         hit_btn.setAttribute("disabled", "disabled")
     }
     if (total_player == 21) {
-        result.style.display = "block";
-        result.innerText = "You won";
-        result_menu();
+        setTimeout(() => {
+            blackjack_fx.play();
+            result.style.display = "block";
+            result.innerText = "You won";
+            result_menu();
+        }, 1000);
+
         pass_btn.setAttribute("disabled", "disabled")
         pass_btn.style.backgroundColor = "grey";
         hit_btn.style.backgroundColor = "grey";
@@ -185,45 +221,55 @@ function check() {
     dealer_second_card.style.display = "block";
     dealer_second_card.src = src_dealer;
     while (total_dealer <= 16) {
+        count_dealer++;
         console.log("dealer count: " + count_dealer)
-        count_dealer += 1;
         console.log("Dealer var: " + total_dealer)
         if (count_dealer == 1) {
-                randomize_dealer();
-                dealing_fx.play();
-                dealer_third_card.style.display = "block";
-                dealer_third_card.src = src_dealer;
+            randomize_dealer();
+            dealing_fx.play();
+            dealer_third_card.style.display = "block";
+            dealer_third_card.src = src_dealer;
         }
         if (count_dealer == 2) {
-                randomize_dealer();
-                dealing_fx.play();
-                dealer_fourth_card.style.display = "block";
-                dealer_fourth_card.src = src_dealer;
+            randomize_dealer();
+            dealing_fx.play();
+            dealer_fourth_card.style.display = "block";
+            dealer_fourth_card.src = src_dealer;
         }
         if (count_dealer == 3) {
-                randomize_dealer();
-                dealing_fx.play();
-                dealer_fifth_card.style.display = "block";
-                dealer_fifth_card.src = src_dealer;
+            randomize_dealer();
+            dealing_fx.play();
+            dealer_fifth_card.style.display = "block";
+            dealer_fifth_card.src = src_dealer;
         }
     }
-    if (total_dealer > 21){
+    if (total_dealer > 21) {
         result.style.display = "block";
         result.innerText = "You won";
-        result_menu(); 
-    }
-    if (total_player > total_dealer) {
-        result.style.display = "block";
-        result.innerText = "You won";
+        dealerbust_fx.play();
         result_menu();
     }
+    if (total_player > total_dealer) {
+        if (total_player > 21) {
+            result.style.display = "block";
+            result.innerText = "You lost";
+            dealerwins_fx.play();
+            result_menu();
+        }
+        else {
+            result.style.display = "block";
+            result.innerText = "You won";
+            dealerbust_fx.play();
+            result_menu();
+        }
+    }
     if (total_player < total_dealer) {
-        if (total_dealer > 21){
+        if (total_dealer > 21) {
             result.style.display = "block";
             result.innerText = "You won";
             result_menu();
         }
-        else{
+        else {
             result.style.display = "block";
             result.innerText = "You lost";
             result_menu();
@@ -239,6 +285,12 @@ function check() {
         result.innerText = "You won";
         result_menu();
     }
+    if (total_dealer == 21) {
+        dealerwins_fx.play();
+        result.style.display = "block";
+        result.innerText = "You lost";
+        result_menu();
+    }
 }
 
 function randomize() {
@@ -248,6 +300,18 @@ function randomize() {
     value = randomCard.value;
     total_player += value;
     player_value.innerText = "Player: " + total_player;
+
+
+    if (voice_effects_on == true) {
+        if (total_player < 21) {
+            let voice_effect = sounds[total_player - 2];
+            src_sfx = voice_effect.src;
+            let played_voice_fx = new Audio(src_sfx);
+            played_voice_fx.play();
+        }
+        else;
+    }
+
     console.log(src);
     console.log(value);
 }
@@ -261,7 +325,7 @@ function randomize_dealer() {
     dealer_value.innerText = "Dealer: " + total_dealer;
 }
 
-function result_menu(){
+function result_menu() {
     reset_btn.style.marginRight = "0vw";
     reset_btn.style.marginTop = "5vh";
     reset_btn.style.width = "15vw";
