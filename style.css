@@ -448,7 +448,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: rgb(21, 80, 21);
     background-image: url(./game_files/roberto/textures/images/vignette_texure.png);
     background-repeat: no-repeat;
@@ -465,7 +465,22 @@ button {
 }
 
 #start {
+    position: fixed;
     background-color: rgb(24, 209, 24);
+}
+
+#voice_btn_enabled{
+    position: fixed;
+    margin-top: 10%;
+    display: block;
+    background-color: rgb(24, 209, 24);
+}
+
+#voice_btn_disabled{
+    position: fixed;
+    margin-top: 10%;
+    display: none;
+    background-color: rgb(255, 0, 0);
 }
 
 #hit_btn {

@@ -1,4 +1,4 @@
-/* Gets all cards from the texure folder. */
+/* Imports all cards from the texure folder. */
 const cards = [
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/2_of_clubs.png", value: 2 },
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/2_of_diamonds.png", value: 2 },
@@ -48,7 +48,38 @@ const cards = [
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_diamonds.png", value: 10 },
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_hearts.png", value: 10 },
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_spades.png", value: 10 }
-]
+];
+
+/* Imports all sounds (voice FX) from the sounds folder. */
+const sounds = [
+    "../game_files/roberto/sounds/2.wav",
+    "../game_files/roberto/sounds/3.wav",
+    "../game_files/roberto/sounds/4.wav",
+    "../game_files/roberto/sounds/5.wav",
+    "../game_files/roberto/sounds/6.wav",
+    "../game_files/roberto/sounds/7.wav",
+    "../game_files/roberto/sounds/8.wav",
+    "../game_files/roberto/sounds/9.wav",
+    "../game_files/roberto/sounds/10.wav",
+    "../game_files/roberto/sounds/11.wav",
+    "../game_files/roberto/sounds/12.wav",
+    "../game_files/roberto/sounds/13.wav",
+    "../game_files/roberto/sounds/14.wav",
+    "../game_files/roberto/sounds/15.wav",
+    "../game_files/roberto/sounds/16.wav",
+    "../game_files/roberto/sounds/17.wav",
+    "../game_files/roberto/sounds/18.wav",
+    "../game_files/roberto/sounds/19.wav",
+    "../game_files/roberto/sounds/20.wav",
+    "../game_files/roberto/sounds/21.wav"
+];
+
+/* Imports the other voice effects and sound effects */
+let dealing_fx = new Audio('../game_files/roberto/sounds/dealing.mp3');
+let anothercard_fx = new Audio('../game_files/roberto/sounds/another_card.wav');
+let blackjack_fx = new Audio('../game_files/roberto/sounds/blackjack.wav');
+let dealerbust_fx = new Audio('../game_files/roberto/sounds/dealer_bust.wav');
+let dealerwins_fx = new Audio('../game_files/roberto/sounds/dealer_wins.wav');
 
 /* Gets all the elements from the HTML page. */
 /* Buttons */
@@ -56,6 +87,9 @@ let start_btn = document.getElementById("start");
 let hit_btn = document.getElementById("hit_btn");
 let pass_btn = document.getElementById("pass_btn");
 let reset_btn = document.getElementById("reset_btn");
+let voice_btn_enabled = document.getElementById("voice_btn_enabled");
+let voice_btn_disabled = document.getElementById("voice_btn_disabled");
+
 /* Cards (Images) */
 let your_first_card = document.getElementById("your_first_card");
 let your_second_card = document.getElementById("your_second_card");
@@ -67,52 +101,48 @@ let dealer_second_card = document.getElementById("dealer_second_card");
 let dealer_third_card = document.getElementById("dealer_third_card");
 let dealer_fourth_card = document.getElementById("dealer_fourth_card");
 let dealer_fifth_card = document.getElementById("dealer_fifth_card");
-/* Shown total values */
+
+/* Show total values */
 let dealer_value = document.getElementById("dealer_value");
 let player_value = document.getElementById("player_value");
-/* The result */
-let result = document.getElementById("result")
-let result_div = document.getElementById("result_div")
 
-/* Imports audio from the sounds folder. */
-/* Gets all cards from the texure folder. */
-const sounds = [
-    { src: "../game_files/roberto/sounds/2.wav", value: 2 },
-    { src: "../game_files/roberto/sounds/3.wav", value: 3 },
-    { src: "../game_files/roberto/sounds/4.wav", value: 4 },
-    { src: "../game_files/roberto/sounds/5.wav", value: 5 },
-    { src: "../game_files/roberto/sounds/6.wav", value: 6 },
-    { src: "../game_files/roberto/sounds/7.wav", value: 7 },
-    { src: "../game_files/roberto/sounds/8.wav", value: 8 },
-    { src: "../game_files/roberto/sounds/9.wav", value: 9 },
-    { src: "../game_files/roberto/sounds/10.wav", value: 10 },
-    { src: "../game_files/roberto/sounds/11.wav", value: 11 },
-    { src: "../game_files/roberto/sounds/12.wav", value: 12 },
-    { src: "../game_files/roberto/sounds/13.wav", value: 13 },
-    { src: "../game_files/roberto/sounds/14.wav", value: 14 },
-    { src: "../game_files/roberto/sounds/15.wav", value: 15 },
-    { src: "../game_files/roberto/sounds/16.wav", value: 16 },
-    { src: "../game_files/roberto/sounds/17.wav", value: 17 },
-    { src: "../game_files/roberto/sounds/18.wav", value: 18 },
-    { src: "../game_files/roberto/sounds/19.wav", value: 19 },
-    { src: "../game_files/roberto/sounds/20.wav", value: 20 },
-    { src: "../game_files/roberto/sounds/21.wav", value: 21 },
-];
-
-let dealing_fx = new Audio('../game_files/roberto/sounds/dealing.mp3');
-let anothercard_fx = new Audio('../game_files/roberto/sounds/another_card.wav');
-let blackjack_fx = new Audio('../game_files/roberto/sounds/blackjack.wav');
-let dealerbust_fx = new Audio('../game_files/roberto/sounds/dealer_bust.wav');
-let dealerwins_fx = new Audio('../game_files/roberto/sounds/dealer_wins.wav');
-
+/* Imports result elements */
+let result = document.getElementById("result");
+let result_div = document.getElementById("result_div");
 
 /* Default values */
 let src;
-let total_player = 0;
-let total_dealer = 0;
-let voice_effects_on = true;
+let total_player = 0; /* Total value of the cards of the player */
+let total_dealer = 0; /* Total value of the cards of the dealer */
+let voice_effects_on = localStorage.getItem("voice_value");
+
+/* Enable or disable functions for voice effects. */
+function enable_voice() {
+    voice_btn_enabled.style.display = "none";
+    voice_btn_disabled.style.display = "block";
+    localStorage.setItem("voice_value", "true");
+}
+
+function disable_voice() {
+    voice_btn_enabled.style.display = "block";
+    voice_btn_disabled.style.display = "none";
+    localStorage.setItem("voice_value", "false");
+}
+
+if (voice_effects_on == "true") {
+    voice_btn_enabled.style.display = "none";
+    voice_btn_disabled.style.display = "block";
+}
+
+if (voice_effects_on == "false") {
+    voice_btn_enabled.style.display = "block";
+    voice_btn_disabled.style.display = "none";
+}
 
 function start() {
+    voice_effects_on = localStorage.getItem("voice_value");
+    voice_btn_enabled.style.display = "none";
+    voice_btn_disabled.style.display = "none";
     hit_btn.setAttribute("disabled", "disabled")
     hit_btn.style.backgroundColor = "grey";
     pass_btn.setAttribute("disabled", "disabled")
@@ -153,13 +183,16 @@ function start() {
         pass_btn.removeAttribute("disabled");
         hit_btn.style.backgroundColor = "rgb(24, 209, 24)";
         pass_btn.style.backgroundColor = "rgb(255, 0, 0)";
-        anothercard_fx.play();
+        if (voice_effects_on == "true") {
+            anothercard_fx.play();
+        }
     }, 5000);
 }
 
 let count = 0;
 
 function hit() {
+    voice_effects_on = localStorage.getItem("voice_value");
     count += 1;
     if (count == 1) {
         randomize();
@@ -183,7 +216,9 @@ function hit() {
         result.style.display = "block";
         result.innerText = "You lost";
         result_menu();
-        dealerwins_fx.play();
+        if (voice_effects_on == "true") {
+            dealerwins_fx.play();
+        }
 
         pass_btn.setAttribute("disabled", "disabled")
         pass_btn.style.backgroundColor = "grey";
@@ -216,14 +251,13 @@ function pass() {
 let count_dealer = 0;
 
 function check() {
+    voice_effects_on = localStorage.getItem("voice_value");
     dealing_fx.play();
     randomize_dealer();
     dealer_second_card.style.display = "block";
     dealer_second_card.src = src_dealer;
     while (total_dealer <= 16) {
         count_dealer++;
-        console.log("dealer count: " + count_dealer)
-        console.log("Dealer var: " + total_dealer)
         if (count_dealer == 1) {
             randomize_dealer();
             dealing_fx.play();
@@ -246,20 +280,26 @@ function check() {
     if (total_dealer > 21) {
         result.style.display = "block";
         result.innerText = "You won";
-        dealerbust_fx.play();
+        if (voice_effects_on == "true") {
+            dealerbust_fx.play();
+        }
         result_menu();
     }
     if (total_player > total_dealer) {
         if (total_player > 21) {
             result.style.display = "block";
             result.innerText = "You lost";
-            dealerwins_fx.play();
+            if (voice_effects_on == "true") {
+                dealerwins_fx.play();
+            }
             result_menu();
         }
         else {
             result.style.display = "block";
             result.innerText = "You won";
-            dealerbust_fx.play();
+            if (voice_effects_on == "true") {
+                dealerbust_fx.play();
+            }
             result_menu();
         }
     }
@@ -294,6 +334,7 @@ function check() {
 }
 
 function randomize() {
+    voice_effects_on = localStorage.getItem("voice_value");
     const index = Math.floor(Math.random() * cards.length);
     const randomCard = cards[index];
     src = randomCard.src;
@@ -302,18 +343,13 @@ function randomize() {
     player_value.innerText = "Player: " + total_player;
 
 
-    if (voice_effects_on == true) {
+    if (voice_effects_on == "true") {
         if (total_player < 21) {
-            let voice_effect = sounds[total_player - 2];
-            src_sfx = voice_effect.src;
-            let played_voice_fx = new Audio(src_sfx);
+            let voice_src = sounds[total_player - 2];
+            let played_voice_fx = new Audio(voice_src);
             played_voice_fx.play();
         }
-        else;
     }
-
-    console.log(src);
-    console.log(value);
 }
 
 function randomize_dealer() {
