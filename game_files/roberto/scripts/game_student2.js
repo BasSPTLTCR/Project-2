@@ -47,7 +47,12 @@ const cards = [
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_clubs.png", value: 10 },
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_diamonds.png", value: 10 },
     { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_hearts.png", value: 10 },
-    { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_spades.png", value: 10 }
+    { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/king_of_spades.png", value: 10 },
+    { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/ace_of_clubs.png", value: 11 },
+    { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/ace_of_diamonds.png", value: 11 },
+    { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/ace_of_hearts.png", value: 11 },
+    { src: "http://127.0.0.1:5500/game_files/roberto/textures/cards/ace_of_spades.png", value: 11 }
+
 ];
 
 /* Imports all sounds (voice FX) from the sounds folder. */
@@ -143,9 +148,9 @@ function start() {
     voice_effects_on = localStorage.getItem("voice_value");
     voice_btn_enabled.style.display = "none";
     voice_btn_disabled.style.display = "none";
-    hit_btn.setAttribute("disabled", "disabled")
+    hit_btn.setAttribute("disabled", "disabled");
     hit_btn.style.backgroundColor = "grey";
-    pass_btn.setAttribute("disabled", "disabled")
+    pass_btn.setAttribute("disabled", "disabled");
     pass_btn.style.backgroundColor = "grey";
 
     reset_btn.style.display = "block";
@@ -342,6 +347,14 @@ function randomize() {
     total_player += value;
     player_value.innerText = "Player: " + total_player;
 
+    if (value == 11) {
+        if (total_player > 10) {
+            value = 1;
+        }
+        if (total_player < 10) {
+            value = 11
+        }
+    }
 
     if (voice_effects_on == "true") {
         if (total_player < 21) {
@@ -359,6 +372,15 @@ function randomize_dealer() {
     value_dealer = randomCard.value;
     total_dealer += value_dealer;
     dealer_value.innerText = "Dealer: " + total_dealer;
+
+    if (value_dealer == 11) {
+        if (total_dealer > 10) {
+            value = 1;
+        }
+        if (total_dealer < 10) {
+            value = 11
+        }
+    }
 }
 
 function result_menu() {
