@@ -192,6 +192,11 @@ function start() {
             anothercard_fx.play();
         }
     }, 5000);
+    if (total_player == 21) {
+        result.style.display = "block";
+        result.innerText = "You won";
+        result_menu();
+    }
 }
 
 let count = 0;

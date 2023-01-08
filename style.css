@@ -465,20 +465,24 @@ button {
 }
 
 #start {
+    width: 8vw !important;
     position: fixed;
+    margin-bottom: 5%;
     background-color: rgb(24, 209, 24);
 }
 
 #voice_btn_enabled{
+    width: 8vw !important;
     position: fixed;
-    margin-top: 10%;
+    margin-top: 5%;
     display: block;
     background-color: rgb(24, 209, 24);
 }
 
 #voice_btn_disabled{
+    width: 8vw !important;
     position: fixed;
-    margin-top: 10%;
+    margin-top: 5%;
     display: none;
     background-color: rgb(255, 0, 0);
 }
