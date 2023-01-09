@@ -120,6 +120,7 @@ let src;
 let total_player = 0; /* Total value of the cards of the player */
 let total_dealer = 0; /* Total value of the cards of the dealer */
 let voice_effects_on = localStorage.getItem("voice_value");
+let skipmainmenu_true = localStorage.getItem("skip_mainmenu");
 
 /* Enable or disable functions for voice effects. */
 function enable_voice() {
@@ -143,6 +144,7 @@ if (voice_effects_on == "false") {
     voice_btn_enabled.style.display = "block";
     voice_btn_disabled.style.display = "none";
 }
+
 
 function start() {
     voice_effects_on = localStorage.getItem("voice_value");
@@ -195,6 +197,10 @@ function start() {
     if (total_player == 21) {
         result.style.display = "block";
         result.innerText = "You won";
+        hit_btn.setAttribute("disabled", "disabled");
+        hit_btn.style.backgroundColor = "grey";
+        pass_btn.setAttribute("disabled", "disabled");
+        pass_btn.style.backgroundColor = "grey";
         result_menu();
     }
 }
@@ -307,9 +313,6 @@ function check() {
         else {
             result.style.display = "block";
             result.innerText = "You won";
-            if (voice_effects_on == "true") {
-                dealerbust_fx.play();
-            }
             result_menu();
         }
     }
@@ -380,10 +383,10 @@ function randomize_dealer() {
 
     if (value_dealer == 11) {
         if (total_dealer > 10) {
-            value = 1;
+            value_dealer = 1;
         }
         if (total_dealer < 10) {
-            value = 11
+            value_dealer = 11
         }
     }
 }
@@ -396,5 +399,6 @@ function result_menu() {
 }
 
 function reload() {
+    localStorage.setItem("skip_mainmenu", "true");
     location.reload();
 }
