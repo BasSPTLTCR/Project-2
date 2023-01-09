@@ -148,12 +148,14 @@ if (voice_effects_on == "false") {
 
 function start() {
     voice_effects_on = localStorage.getItem("voice_value");
-    voice_btn_enabled.style.display = "none";
-    voice_btn_disabled.style.display = "none";
-    hit_btn.setAttribute("disabled", "disabled");
-    hit_btn.style.backgroundColor = "grey";
-    pass_btn.setAttribute("disabled", "disabled");
-    pass_btn.style.backgroundColor = "grey";
+    if(skipmainmenu_true == "true"){
+        voice_btn_enabled.style.display = "none";
+        voice_btn_disabled.style.display = "none";
+        hit_btn.setAttribute("disabled", "disabled");
+        hit_btn.style.backgroundColor = "grey";
+        pass_btn.setAttribute("disabled", "disabled");
+        pass_btn.style.backgroundColor = "grey";
+    }
 
     reset_btn.style.display = "block";
     dealer_value.style.display = "flex";
