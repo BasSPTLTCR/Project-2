@@ -11,6 +11,8 @@ let creditsBlock = document.getElementById("creditsdiv");
 let startScreen = document.getElementById("blackstartscreen")
 let gameName = document.getElementById("gamenameb")
 
+let character = document.getElementById("berkhout")
+
 //sfx
 let menuMusic = new Audio("../game_files/bastiaan/sounds/DasGrosseGrillen.mp3");
 let gameMusic = new Audio("../game_files/bastiaan/sounds/TURBOFOLK.mp3");
@@ -36,20 +38,9 @@ function loadMenu() {
     if (creditsBlock) {
         creditsBlock.style.display = "none";
     }
-}
-
-function loadGame() {
-     //hides buttons
-    gameStarter.style.display = "none";
-    settingsButton.style.display = "none";
-    creditsButton.style.display = "none";
-    gameName.style.display = "none";
-    //mutes old music
-    menuMusic.muted = true;
-    //starts new music
-    gameMusic.play();
-    gameMusic.loop = true;
-    startScreen.style.display = "block"
+    if (character) {
+        character.style.display = "none";
+    }
 }
 
 function loadSettings() {
@@ -85,3 +76,32 @@ function loadCredits() {
     creditsBlock.style.display = "block";
     backButton.style.display = "block";
 }
+
+
+// Game stuff starts here
+
+function loadGame() {
+    //hides buttons
+   gameStarter.style.display = "none";
+   settingsButton.style.display = "none";
+   creditsButton.style.display = "none";
+   gameName.style.display = "none";
+   //mutes old music
+   menuMusic.muted = true;
+   //starts new music
+   gameMusic.play();
+   gameMusic.loop = true;
+   startScreen.style.display = "block";
+
+
+   
+}
+
+window.addEventListener("keydown", function(e){
+
+   if(e.key == "Enter") {
+    startScreen.style.display = "none";
+    character.style.display = "block"
+   }
+
+})

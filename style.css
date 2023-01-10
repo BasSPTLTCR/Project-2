@@ -648,6 +648,9 @@ button {
     color: white;
 }
 
+#berkhout {
+    display: none;
+}
 /* footer */
 
 footer {
