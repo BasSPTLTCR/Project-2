@@ -173,8 +173,8 @@ const maze8 = [
 
 function createGrid(rows, cols) {
   // Will generate a random number to use for the maze
-  // r = Math.floor(Math.random() * 3)
-  r = 0
+  r = Math.floor(Math.random() * 3)
+  // r = 0
   // Create a table element
   table = document.createElement('table');
 
