@@ -3,21 +3,20 @@ const container = document.getElementById('grid');
 const btn = document.getElementById("button")
 const btn2 = document.getElementById("button2")
 const btn3 = document.getElementById("button3")
-let table = null
-let time = null
-let time2 = null
-let result = null
-let playerPosition = null
-let start = null
-let start2 = null
-let start3 = null
-let nextMoveD = null
-let nextMoveA = null
-let nextMoveW = null
-let nextMoveS = null
+let table
+let time
+let time2
+let result
+let playerPosition
+let start
+let start2
+let start3
+let nextMoveD
+let nextMoveA
+let nextMoveW
+let nextMoveS
 let movementFlag = false
 
-// Made by Bas
 const maze0 = [
   [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
   [2, 0, 0, 1, 0, 0, 0, 0, 1, 2],
@@ -30,7 +29,6 @@ const maze0 = [
   [2, 0, 0, 0, 0, 0, 1, 0, 0, 2],
   [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ];
-// Made by Floris
 const maze1 = [
   [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
   [2, 0, 0, 0, 0, 1, 0, 0, 0, 2],
@@ -43,7 +41,6 @@ const maze1 = [
   [2, 0, 0, 0, 1, 0, 0, 0, 0, 2],
   [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ];
-// Made by 
 const maze2 = [
   [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 2],
@@ -109,29 +106,29 @@ const maze5 = [
 ];
 const maze6 = [
   [2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-  [2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 2],
+  [2, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 2],
+  [2, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 2],
+  [2, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
-  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 ];
 const maze7 = [
   [2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-  [2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
@@ -153,7 +150,7 @@ const maze7 = [
 ];
 const maze8 = [
   [2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-  [2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
   [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
@@ -176,8 +173,8 @@ const maze8 = [
 
 function createGrid(rows, cols) {
   // Will generate a random number to use for the maze
-  r = Math.floor(Math.random() * 3)
-  // r = 0
+  // r = Math.floor(Math.random() * 3)
+  r = 0
   // Create a table element
   table = document.createElement('table');
 
@@ -313,8 +310,9 @@ function createGrid(rows, cols) {
           if (maze5[j][i] == 4) {
             cell.setAttribute("class", "playerHead")
           }
-        }} else if (cols == 20) {
-          if (r == 0) {
+        }
+      } else if (cols == 20) {
+        if (r == 0) {
           // Looks if the number from the array in the array has the number 1
           if (maze6[j][i] == 1) {
             cell.setAttribute("class", "wall")
@@ -331,10 +329,46 @@ function createGrid(rows, cols) {
           if (maze6[j][i] == 4) {
             cell.setAttribute("class", "playerHead")
           }
+        }
+
+        if (r == 1) {
+          // Looks if the number from the array in the array has the number 1
+          if (maze7[j][i] == 1) {
+            cell.setAttribute("class", "wall")
+          }
+          // Looks if the number from the array in the array has the number 2
+          if (maze7[j][i] == 2) {
+            cell.setAttribute("class", "permWall")
+          }
+          // Looks if the number from the array in the array has the number 3
+          if (maze7[j][i] == 3) {
+            cell.setAttribute("class", "exit")
+          }
+          // Looks if the number from the array in the array has the number 4
+          if (maze7[j][i] == 4) {
+            cell.setAttribute("class", "playerHead")
           }
         }
-      
 
+        if (r == 2) {
+          // Looks if the number from the array in the array has the number 1
+          if (maze8[j][i] == 1) {
+            cell.setAttribute("class", "wall")
+          }
+          // Looks if the number from the array in the array has the number 2
+          if (maze8[j][i] == 2) {
+            cell.setAttribute("class", "permWall")
+          }
+          // Looks if the number from the array in the array has the number 3
+          if (maze8[j][i] == 3) {
+            cell.setAttribute("class", "exit")
+          }
+          // Looks if the number from the array in the array has the number 4
+          if (maze5[j][i] == 4) {
+            cell.setAttribute("class", "playerHead")
+          }
+        }
+      }
 
       // Add the cell to the row
       row.appendChild(cell);
@@ -465,7 +499,7 @@ function load() {
       nextMoveS = playerPosition + 1
 
       // Here it will look for the d key to be pressed and when the exit is in the providing move
-    
+
     } else if ((event.key == "s" || event.key == "ArrowDown") && this.document.getElementById(nextMoveS).classList.contains("exit") == true) {
 
       // These four lines will provide moving the player to the right and removing the exit class
@@ -557,13 +591,15 @@ function hardMode() {
     td.style.width = "22px"
     td.style.height = "22px"
   }
-  
+
   if (r == 0) {
-  start3 = document.getElementById(801).setAttribute("class", "playerHead")
-  nextMoveD = 801 + 100
-  nextMoveA = 801 - 100
-  nextMoveW = 801 - 1
-  nextMoveS = 801 + 1
+    start3 = document.getElementById(801).setAttribute("class", "playerHead")
+    nextMoveD = 801 + 100
+    nextMoveA = 801 - 100
+    nextMoveW = 801 - 1
+    nextMoveS = 801 + 1
+  } else if (r == 1) {
+
   }
   load()
 }
