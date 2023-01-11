@@ -120,7 +120,6 @@ let src;
 let total_player = 0; /* Total value of the cards of the player */
 let total_dealer = 0; /* Total value of the cards of the dealer */
 let voice_effects_on = localStorage.getItem("voice_value");
-let skipmainmenu_true = localStorage.getItem("skip_mainmenu");
 
 /* Enable or disable functions for voice effects. */
 function enable_voice() {
@@ -135,6 +134,7 @@ function disable_voice() {
     localStorage.setItem("voice_value", "false");
 }
 
+/* Change button when clicked */
 if (voice_effects_on == "true") {
     voice_btn_enabled.style.display = "none";
     voice_btn_disabled.style.display = "block";
@@ -145,23 +145,19 @@ if (voice_effects_on == "false") {
     voice_btn_disabled.style.display = "none";
 }
 
-
+/* Start the blackjack game */
 function start() {
     voice_effects_on = localStorage.getItem("voice_value");
-    if(skipmainmenu_true == "true"){
-        voice_btn_enabled.style.display = "none";
-        voice_btn_disabled.style.display = "none";
-        hit_btn.setAttribute("disabled", "disabled");
-        hit_btn.style.backgroundColor = "grey";
-        pass_btn.setAttribute("disabled", "disabled");
-        pass_btn.style.backgroundColor = "grey";
-    }
 
+    /* Make the elements/buttons visible */
     reset_btn.style.display = "block";
     dealer_value.style.display = "flex";
     player_value.style.display = "flex";
     start_btn.style.display = "none";
+    voice_btn_enabled.display = "none";
+    voice_btn_disabled.display = "none";
 
+    /* Deal cards to the player and dealer */
     setTimeout(() => {
         randomize();
         dealing_fx.play();
@@ -192,23 +188,28 @@ function start() {
         pass_btn.removeAttribute("disabled");
         hit_btn.style.backgroundColor = "rgb(24, 209, 24)";
         pass_btn.style.backgroundColor = "rgb(255, 0, 0)";
+
+        /* Play voice effects if value is true */
         if (voice_effects_on == "true") {
             anothercard_fx.play();
         }
+
+        /* Check for possible 21/blackjack */
+        if (total_player == 21) {
+            result.style.display = "block";
+            result.innerText = "You won";
+            hit_btn.setAttribute("disabled", "disabled");
+            hit_btn.style.backgroundColor = "grey";
+            pass_btn.setAttribute("disabled", "disabled");
+            pass_btn.style.backgroundColor = "grey";
+            result_menu();
+        }
     }, 5000);
-    if (total_player == 21) {
-        result.style.display = "block";
-        result.innerText = "You won";
-        hit_btn.setAttribute("disabled", "disabled");
-        hit_btn.style.backgroundColor = "grey";
-        pass_btn.setAttribute("disabled", "disabled");
-        pass_btn.style.backgroundColor = "grey";
-        result_menu();
-    }
 }
 
 let count = 0;
 
+/* Ask a card from the dealer (hit) */
 function hit() {
     voice_effects_on = localStorage.getItem("voice_value");
     count += 1;
@@ -341,7 +342,9 @@ function check() {
         result_menu();
     }
     if (total_dealer == 21) {
-        dealerwins_fx.play();
+        if (voice_effects_on == "true") {
+            dealerwins_fx.play();
+        }
         result.style.display = "block";
         result.innerText = "You lost";
         result_menu();
@@ -358,11 +361,11 @@ function randomize() {
     player_value.innerText = "Player: " + total_player;
 
     if (value == 11) {
-        if (total_player > 10) {
+        if (total_player > 21) {
             value = 1;
         }
-        if (total_player < 10) {
-            value = 11
+        else if (total_player >= 10) {
+            value = 1
         }
     }
 
@@ -373,6 +376,8 @@ function randomize() {
             played_voice_fx.play();
         }
     }
+
+    console.log(total_player)
 }
 
 function randomize_dealer() {
@@ -384,11 +389,11 @@ function randomize_dealer() {
     dealer_value.innerText = "Dealer: " + total_dealer;
 
     if (value_dealer == 11) {
-        if (total_dealer > 10) {
+        if (total_dealer > 21) {
             value_dealer = 1;
         }
-        if (total_dealer < 10) {
-            value_dealer = 11
+        else if (total_dealer >= 10) {
+            value_dealer = 1
         }
     }
 }
