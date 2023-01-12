@@ -45,7 +45,7 @@ function loadMenu() {
         character.style.display = "none";
     }
     if (gameStarted = true) {
-        gameStarted = false
+        gameStarted = falseimage.png
     }
 }
 
@@ -106,7 +106,7 @@ function loadGame() {
 window.addEventListener("keydown", function(e){
 
    if(e.key == "Enter") {
-    if (startScreen.style.display = "block") {
+    if (startScreen.style.display == "block") {
         startScreen.style.display = "none"
         gameStarted = true
         if (gameStarted = true) {
@@ -125,4 +125,5 @@ window.addEventListener("keydown", function(e){
 
 function gameController() {
     character.style.display = "block"
+    let obstacles = {pipe, metal, cactus}
 }
