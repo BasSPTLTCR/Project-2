@@ -17,6 +17,9 @@ let character = document.getElementById("berkhout")
 let menuMusic = new Audio("../game_files/bastiaan/sounds/DasGrosseGrillen.mp3");
 let gameMusic = new Audio("../game_files/bastiaan/sounds/TURBOFOLK.mp3");
 
+//values
+let gameStarted = false
+
 // function that gets the menu set up
 function loadMenu() {
     //starts music
@@ -40,6 +43,9 @@ function loadMenu() {
     }
     if (character) {
         character.style.display = "none";
+    }
+    if (gameStarted = true) {
+        gameStarted = false
     }
 }
 
@@ -100,9 +106,23 @@ function loadGame() {
 window.addEventListener("keydown", function(e){
 
    if(e.key == "Enter") {
-    startScreen.style.display = "none";
-    character.style.display = "block"
+    if (startScreen.style.display = "block") {
+        startScreen.style.display = "none"
+        gameStarted = true
+        if (gameStarted = true) {
+            gameController()
+        }
+        else {
+            console.log("Something went wrong with gamestarted!")
+        }
+    }
+    else {
+        console.log("you cannot run this function right noW!")
+    }
    }
 
 })
 
+function gameController() {
+    character.style.display = "block"
+}
