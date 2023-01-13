@@ -26,7 +26,7 @@ div:first-of-type {
 
 .index-main {
     height: 100vh;
-}
+} 
 
 .logo {
     text-decoration: none;
@@ -431,8 +431,6 @@ body:not(div:first-of-type) {
     font-size: 35px;
 }
 
-/*Roberto's game CSS*/
-
 button {
     all: unset;
     cursor: pointer;
@@ -442,6 +440,8 @@ button {
     height: 5vh;
     text-align: center;
 }
+
+/*Roberto's game CSS*/
 
 #display {
     z-index: 4;

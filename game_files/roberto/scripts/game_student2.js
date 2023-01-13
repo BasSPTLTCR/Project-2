@@ -154,8 +154,8 @@ function start() {
     dealer_value.style.display = "flex";
     player_value.style.display = "flex";
     start_btn.style.display = "none";
-    voice_btn_enabled.display = "none";
-    voice_btn_disabled.display = "none";
+    voice_btn_enabled.style.display = "none";
+    voice_btn_disabled.style.display = "none";
 
     /* Deal cards to the player and dealer */
     setTimeout(() => {
