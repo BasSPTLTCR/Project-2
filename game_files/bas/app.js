@@ -1,4 +1,3 @@
-// Get a reference to the container element
 const container = document.getElementById('grid');
 const btn = document.getElementById("button")
 const btn2 = document.getElementById("button2")
