@@ -565,7 +565,9 @@ button {
 }
 
 .permWall, .wall {
-    background-color: darkslateblue;
+    background-color: brown;
+    background-image: url("./game_files/bas/textures/wall.png");
+    background-repeat: round;
 }
 
 .invisible {
