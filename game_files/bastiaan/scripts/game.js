@@ -12,6 +12,9 @@ let startScreen = document.getElementById("blackstartscreen")
 let gameName = document.getElementById("gamenameb")
 
 let character = document.getElementById("berkhout")
+let pipe = document.getElementById("obstacle1")
+let metal = document.getElementById("obstacle2")
+let cactus = document.getElementById("obstacle3")
 
 //sfx
 let menuMusic = new Audio("../game_files/bastiaan/sounds/DasGrosseGrillen.mp3");
@@ -32,6 +35,7 @@ function loadMenu() {
     settingsButton.style.display = "block";
     creditsButton.style.display = "block";
     gameName.style.display = "block";
+    //If button or div is there, hide it
     if (muteButton) {
         muteButton.style.display = "none";
     }
@@ -44,8 +48,9 @@ function loadMenu() {
     if (character) {
         character.style.display = "none";
     }
+    //If the game for whatever reason is still started, turn it off.
     if (gameStarted = true) {
-        gameStarted = falseimage.png
+        gameStarted = false
     }
 }
 
@@ -60,6 +65,7 @@ backButton.style.display = "block";
 }
 
 function musicMute () {
+    //if music is not muted, mute music, if music is  muted, unmute music
     if (menuMusic.muted == false) {
         menuMusic.muted = true;
     }
@@ -75,6 +81,7 @@ function musicMute () {
 }
 
 function loadCredits() {
+    //adds credits
     gameStarter.style.display = "none";
     settingsButton.style.display = "none";
     creditsButton.style.display = "none";
@@ -103,6 +110,7 @@ function loadGame() {
    
 }
 
+// if enter is pressed, game starts, game start window is hidden.
 window.addEventListener("keydown", function(e){
 
    if(e.key == "Enter") {
@@ -112,6 +120,7 @@ window.addEventListener("keydown", function(e){
         if (gameStarted = true) {
             gameController()
         }
+        //for debugging purposes
         else {
             console.log("Something went wrong with gamestarted!")
         }
@@ -124,6 +133,22 @@ window.addEventListener("keydown", function(e){
 })
 
 function gameController() {
-    character.style.display = "block"
-    let obstacles = {pipe, metal, cactus}
+    character.style.display = "block";
+    //gets random obstacle
+    let obstacles = [pipe, metal, cactus];
+    let randomizedObstacle = Math.floor(Math.random() * obstacles.length) + 1;
+    let obstacle = obstacles[randomizedObstacle];
+    //console.log(obstacle)
+    //initiates block animation
+    obstacle.style.animation = "blockMove 4s infinite linear";
 }
+
+window.addEventListener("keydown", function(s){
+    if(s.key == "Space") {
+        if (character.style.display = "block") {
+            if (gameStarted = true) {
+                //jump function
+            }
+        }
+    }
+})
