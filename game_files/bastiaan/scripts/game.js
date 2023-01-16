@@ -136,7 +136,7 @@ function gameController() {
     character.style.display = "block";
     //gets random obstacle
     let obstacles = [pipe, metal, cactus];
-    let randomizedObstacle = Math.floor(Math.random() * obstacles.length) + 1;
+    let randomizedObstacle = Math.floor(Math.random() * obstacles.length);
     let obstacle = obstacles[randomizedObstacle];
     //console.log(obstacle)
     //initiates block animation
