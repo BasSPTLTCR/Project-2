@@ -9,12 +9,12 @@ let backButton = document.getElementById("back");
 //divs and text
 let creditsBlock = document.getElementById("creditsdiv");
 let startScreen = document.getElementById("blackstartscreen")
+let deathScreen = document.getElementById("deathscreen")
 let gameName = document.getElementById("gamenameb")
+let textInter = document.getElementById("textinter")
 
 let character = document.getElementById("berkhout")
 let pipe = document.getElementById("obstacle1")
-let metal = document.getElementById("obstacle2")
-let cactus = document.getElementById("obstacle3")
 
 //sfx
 let menuMusic = new Audio("../game_files/bastiaan/sounds/DasGrosseGrillen.mp3");
@@ -112,7 +112,6 @@ function loadGame() {
 
 // if enter is pressed, game starts, game start window is hidden.
 window.addEventListener("keydown", function(e){
-
    if(e.key == "Enter") {
     if (startScreen.style.display == "block") {
         startScreen.style.display = "none"
@@ -134,21 +133,31 @@ window.addEventListener("keydown", function(e){
 
 function gameController() {
     character.style.display = "block";
-    //gets random obstacle
-    let obstacles = [pipe, metal, cactus];
-    let randomizedObstacle = Math.floor(Math.random() * obstacles.length);
-    let obstacle = obstacles[randomizedObstacle];
+    //random obstacle used to be here, too lazy to change it
+    let obstacle = pipe
     //console.log(obstacle)
     //initiates block animation
+    obstacle.style.display = "block"
     obstacle.style.animation = "blockMove 4s infinite linear";
-}
+    //console.log(charRect.top, charRect.right, charRect.bottom, charRect.left);
+    //i somehow need to figure out how to figure out if a div touches a div
 
 window.addEventListener("keydown", function(s){
-    if(s.key == "Space") {
+    if(s.code == "Space") {
         if (character.style.display = "block") {
             if (gameStarted = true) {
-                //jump function
+                character.classList.add("jump");
+                this.setTimeout(function() {
+                    character.classList.remove("jump")
+                },1000);
             }
         }
+    }
+})
+
+window.addEventListener("keydown", function(c){
+    if (c.code == "Escape") {
+        textInter.innerText = "Game Paused"
+        //handle the rest of the stuff, doing that later
     }
 })

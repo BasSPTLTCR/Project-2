@@ -633,6 +633,12 @@ button {
     opacity: 0.5;
 }
 
+#deathscreen {
+    display: none;
+    background-color: black;
+    opacity: 0.5;
+}
+
 #blackstartscreen h2, h3 {
     color: gray;
 }
@@ -650,7 +656,8 @@ button {
 
 #berkhout {
     display: none;
-    bottom: 100px;
+    position: relative;
+    top: 200px;
 }
 
 #obstacle1 {
@@ -663,28 +670,7 @@ button {
     left: 1209px;
     margin-bottom: 12.5vh;
     position: absolute;
-}
-
-#obstacle2 {
-    background-image: url(./game_files/bastiaan/textures/metal1.png);
-    background-repeat: no-repeat;
-    background-size: auto;
-    width: 50px;
-    height: 20px;
-    bottom: 0;
-    left: 1209px;
-    position: absolute;
-}
-
-#obstacle3 {
-    background-image: url(./game_files/bastiaan/textures/cactus.png);
-    background-repeat: no-repeat;
-    background-size: auto;
-    width: 50px;
-    height: 50px;
-    bottom: 0;
-    left: 1209px;
-    position: absolute;
+    display: none;
 }
 
 @keyframes blockMove {
@@ -695,6 +681,25 @@ button {
     100% {
       /* je doet -50 omdat je het block niet meer in beeld wilt zien */
       left: -50px;
+    }
+  }
+
+.jump {
+    animation: jump 1000ms;
+}
+
+  @keyframes jump {
+    0% {
+        top: 200px;
+    }
+    30% {
+        top: 70px;
+    }
+    70% {
+        top: 70px;
+    }
+    100% {
+        top: 200px;
     }
   }
 
