@@ -259,6 +259,7 @@ function hit() {
     }
 }
 
+/* Deny the card from the dealer */
 function pass() {
     check();
     pass_btn.setAttribute("disabled", "disabled");
@@ -269,6 +270,7 @@ function pass() {
 
 let count_dealer = 0;
 
+/* Check who has won */
 function check() {
     voice_effects_on = localStorage.getItem("voice_value");
     dealing_fx.play();
@@ -351,6 +353,7 @@ function check() {
     }
 }
 
+/* Shuffle the cards for the player */
 function randomize() {
     voice_effects_on = localStorage.getItem("voice_value");
     const index = Math.floor(Math.random() * cards.length);
@@ -380,6 +383,7 @@ function randomize() {
     console.log(total_player)
 }
 
+/* Shuffle the cards for the dealer */
 function randomize_dealer() {
     const index = Math.floor(Math.random() * cards.length);
     const randomCard = cards[index];
@@ -398,6 +402,7 @@ function randomize_dealer() {
     }
 }
 
+/* Make the result menu visible */
 function result_menu() {
     reset_btn.style.marginRight = "0vw";
     reset_btn.style.marginTop = "5vh";
@@ -405,7 +410,7 @@ function result_menu() {
     result_div.style.display = "block";
 }
 
+/* Reload game */
 function reload() {
-    localStorage.setItem("skip_mainmenu", "true");
     location.reload();
 }
