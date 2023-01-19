@@ -158,6 +158,6 @@ window.addEventListener("keydown", function(s){
 window.addEventListener("keydown", function(c){
     if (c.code == "Escape") {
         textInter.innerText = "Game Paused"
-        //handle the rest of the stuff, doing that later
+        //If escape is pressed, open the pause menu, this is lower priority then the die function.
     }
 })
