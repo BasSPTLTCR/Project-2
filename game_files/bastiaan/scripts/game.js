@@ -8,13 +8,13 @@ let backButton = document.getElementById("back");
 
 //divs and text
 let creditsBlock = document.getElementById("creditsdiv");
-let startScreen = document.getElementById("blackstartscreen")
-let deathScreen = document.getElementById("deathscreen")
-let gameName = document.getElementById("gamenameb")
-let textInter = document.getElementById("textinter")
+let startScreen = document.getElementById("blackstartscreen");
+let deathScreen = document.getElementById("deathscreen");
+let gameName = document.getElementById("gamenameb");
+let textInter = document.getElementById("textinter");
 
-let character = document.getElementById("berkhout")
-let pipe = document.getElementById("obstacle1")
+let character = document.getElementById("berkhout");
+let pipe = document.getElementById("obstacle1");
 
 //sfx
 let menuMusic = new Audio("../game_files/bastiaan/sounds/DasGrosseGrillen.mp3");
@@ -113,8 +113,9 @@ function loadGame() {
 // if enter is pressed, game starts, game start window is hidden.
 window.addEventListener("keydown", function(e){
    if(e.key == "Enter") {
-    if (startScreen.style.display == "block") {
+    if (startScreen.style.display == "block" || deathScreen.style.display == "block") {
         startScreen.style.display = "none"
+        deathScreen.style.display = "none"
         gameStarted = true
         if (gameStarted = true) {
             gameController()
@@ -134,13 +135,12 @@ window.addEventListener("keydown", function(e){
 function gameController() {
     character.style.display = "block";
     //random obstacle used to be here, too lazy to change it
-    let obstacle = pipe
     //console.log(obstacle)
     //initiates block animation
-    obstacle.style.display = "block"
-    obstacle.style.animation = "blockMove 4s infinite linear";
-    //console.log(charRect.top, charRect.right, charRect.bottom, charRect.left);
-    //i somehow need to figure out how to figure out if a div touches a div
+    pipe.style.display = "block"
+    pipe.style.animation = "blockMove 4s infinite linear";
+    //console.log(charRect.top, charRect.right, charRect.bottom, charRect.left); //old code that did not
+}
 
 window.addEventListener("keydown", function(s){
     if(s.code == "Space") {
@@ -155,9 +155,30 @@ window.addEventListener("keydown", function(s){
     }
 })
 
-window.addEventListener("keydown", function(c){
-    if (c.code == "Escape") {
+window.addEventListener("keydown", function(b){
+    if (b.code == "Backspace") {
         textInter.innerText = "Game Paused"
         //If escape is pressed, open the pause menu, this is lower priority then the die function.
     }
 })
+
+let hitbox = setInterval(function(){
+
+
+    let manTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+
+    let barrelLeft = parseInt(window.getComputedStyle(pipe).getPropertyValue("left"));
+
+
+
+    console.log(barrelLeft)
+
+    if(barrelLeft<650 && barrelLeft>600 && manTop>=95){
+
+        deathScreen.style.display = "block";
+        character.style.display = "none";
+        pipe.style.display = "none";
+        textInter.innerText = "You Died!";
+    }
+
+    },10)
