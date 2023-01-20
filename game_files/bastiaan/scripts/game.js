@@ -155,10 +155,21 @@ window.addEventListener("keydown", function(s){
     }
 })
 
-window.addEventListener("keydown", function(b){
-    if (b.code == "Backspace") {
+window.addEventListener("keydown", function(c){
+    if (c.code == "Escape") {
+        deathScreen.style.display = "block";
         textInter.innerText = "Game Paused"
         //If escape is pressed, open the pause menu, this is lower priority then the die function.
+    }
+})
+
+window.addEventListener("keydown", function(b) {
+    if (b.key == "Backspace") {
+        if (gameStarted = true) {
+            if (deathScreen.display = "block") {
+                loadMenu()
+            }
+        }
     }
 })
 
@@ -173,7 +184,7 @@ let hitbox = setInterval(function(){
 
     console.log(barrelLeft)
 
-    if(barrelLeft<650 && barrelLeft>600 && manTop>=95){
+    if(barrelLeft<675 && barrelLeft>650 && manTop>=95){
 
         deathScreen.style.display = "block";
         character.style.display = "none";

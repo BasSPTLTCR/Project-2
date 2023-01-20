@@ -639,6 +639,10 @@ button {
     opacity: 0.5;
 }
 
+#deathscreen h2, h3 {
+    color: gray;
+}
+
 #blackstartscreen h2, h3 {
     color: gray;
 }
