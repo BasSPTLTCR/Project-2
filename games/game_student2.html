@@ -56,14 +56,32 @@
     <main class="game_main">
         <h1>Simple Blackjack</h1>
         <section id="display">
+            <h2 id="dealer_value">Dealer: 0</h2>
+            <h2 id="player_value">Player: 0</h2>
+            <h2 id="result">N/A</h2>
             <button id="start" onclick="start()">Start</button>
+            <button id="voice_btn_enabled" onclick="enable_voice()">Enable voice effects</button>  
+            <button id="voice_btn_disabled" onclick="disable_voice()">Disable voice effects</button>     
             <button id="hit_btn" onclick="hit()">Hit</button>
-            <button id="pass" onclick="pass()">Pass</button>
-            <img id="dealer_cards" src="../game_files/roberto/textures/cards/10_of_hearts.png" alt="The dealers cards">
-            <img id="dealer_second_cards" src="../game_files/roberto/textures/cards/10_of_hearts.png" alt="The dealers second cards">
-            <img id="your_first_card" src="../game_files/roberto/textures/cards/10_of_hearts.png" alt="Your cards">
-            <img id="your_second_card" src="../game_files/roberto/textures/cards/10_of_hearts.png" alt="Your cards">
-            <img id="your_hit_card_1" src="../game_files/roberto/textures/cards/10_of_hearts.png" alt="Your third card">
+            <button id="pass_btn" onclick="pass()">Pass</button>
+            <div id="result_div">
+                <h2 id="result">N/A</h2>
+            </div>
+            <button id="reset_btn" onclick="reload()"></button>
+            <img id="dealer_card" src=" " alt="The dealers cards">
+            <img id="dealer_second_card" src=" "
+                alt="The dealers second card">
+            <img id="dealer_third_card" src=" "
+            alt="The dealers third card">
+            <img id="dealer_fourth_card" src=" "
+            alt="The dealers fourth card">
+        <img id="dealer_fifth_card" src=" "
+        alt="The dealers fifth card">
+            <img id="your_first_card" src=" " alt="Your cards">
+            <img id="your_second_card" src=" " alt="Your cards">
+            <img id="your_third_card" src=" " alt="Your third card">
+            <img id="your_fourth_card" src=" " alt="Your fourth card">
+            <img id="your_fifth_card" src=" " alt="Your fifth card">
         </section>
     </main>
 
