@@ -750,8 +750,18 @@ button {
     opacity: 0.5;
 }
 
-#blackstartscreen h2,
-h3 {
+game-bastiaan
+#deathscreen {
+    display: none;
+    background-color: black;
+    opacity: 0.5;
+}
+
+#deathscreen h2, h3 {
+    color: gray;
+}
+
+#blackstartscreen h2, h3 {
     color: gray;
 }
 
@@ -765,6 +775,55 @@ h3 {
 #gamenameb h1 {
     color: white;
 }
+
+#berkhout {
+    display: none;
+    position: relative;
+    top: 200px;
+}
+
+#obstacle1 {
+    background-image: url(./game_files/bastiaan/textures/pipe1.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    left: 1209px;
+    margin-bottom: 12.5vh;
+    position: absolute;
+    display: none;
+}
+
+@keyframes blockMove {
+    0% {
+      left: 1209px;
+    }
+
+    100% {
+      /* je doet -50 omdat je het block niet meer in beeld wilt zien */
+      left: -50px;
+    }
+  }
+
+.jump {
+    animation: jump 1000ms;
+}
+
+  @keyframes jump {
+    0% {
+        top: 200px;
+    }
+    30% {
+        top: 70px;
+    }
+    70% {
+        top: 70px;
+    }
+    100% {
+        top: 200px;
+    }
+  }
 
 /* footer */
 
